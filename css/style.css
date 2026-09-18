@@ -482,7 +482,10 @@ body.menu-open { overflow: hidden; }
 .grid-port .work:nth-child(5n+1) .ph { aspect-ratio: 1; }
 .grid-port .work:nth-child(7n+3) .ph { aspect-ratio: 3 / 4; }
 .grid-port .work[data-cat~="curada"] .work__cap::after { content: "curada"; font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red-hot); }
-@media (max-width: 900px) { .grid-port { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .grid-port { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-port .work .ph { aspect-ratio: 4 / 5 !important; }
+}
 
 /* Lightbox */
 .lightbox { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1100px); width: 100%; }
