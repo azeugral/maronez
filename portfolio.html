@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio | Maronez</title>
+  <meta name="description" content="Peças cyber freehand feitas por Maronez em Porto Alegre e guest spots. Filtre por cyber, freehand ou curada.">
+  <meta name="theme-color" content="#0b0a0a">
+  <link rel="canonical" href="https://azeugral.github.io/maronez/portfolio.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfólio | Maronez">
+  <meta property="og:description" content="Peças cyber freehand feitas direto na pele.">
+  <meta property="og:url" content="https://azeugral.github.io/maronez/portfolio.html">
+  <meta property="og:image" content="https://azeugral.github.io/maronez/assets/img/og.jpg">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Tektur:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap header__in">
+      <a class="brand" href="index.html" aria-label="Maronez, início">
+        <img class="brand__mark" src="assets/img/logo-maronez.png" alt="" width="40" height="40" data-logo>
+        <span class="brand__name">Maronez</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="portfolio.html">Portfólio</a></li>
+          <li><a class="nav__link" href="cyber-freehand.html">Cyber</a></li>
+          <li><a class="nav__link" href="freehand.html">Freehand</a></li>
+          <li><a class="nav__link" href="loja.html">Loja</a></li>
+          <li><a class="nav__link" href="sala.html">Sala</a></li>
+        </ul>
+        <a class="btn" href="orcamento.html">Orçamento</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+          <span class="nav-toggle__label">Menu</span><span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <ul class="menu__list">
+      <li><a class="menu__link" href="portfolio.html">Portfólio</a></li>
+      <li><a class="menu__link" href="cyber-freehand.html">Cyber Freehand</a></li>
+      <li><a class="menu__link" href="freehand.html">Freehand</a></li>
+      <li><a class="menu__link" href="loja.html">Loja</a></li>
+      <li><a class="menu__link" href="sala.html">Sala de espera</a></li>
+      <li><a class="menu__link" href="orcamento.html">Orçamento</a></li>
+    </ul>
+    <div class="menu__foot">
+      <a class="link-arrow" href="#" data-wa="Fala Maronez! Quero fazer uma tattoo.">WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+      <a class="muted" href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener">@maronezzzz</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1 class="display display--xl">Portfólio</h1>
+        <p class="lead">Peças feitas direto na pele. Clica em qualquer uma pra ver detalhe, região e tempo de sessão.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="filters" role="group" aria-label="Filtrar por categoria">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Tudo</button>
+          <button class="filter" type="button" data-filter="cyber" aria-pressed="false">Cyber</button>
+          <button class="filter" type="button" data-filter="freehand" aria-pressed="false">Freehand</button>
+          <button class="filter" type="button" data-filter="curada" aria-pressed="false">Curada</button>
+        </div>
+
+        <!-- CONFIRMAR: trocar as 12 imagens pelas fotos reais (mín. 1200px no lado menor).
+             data-cat aceita mais de uma categoria: "cyber curada". -->
+        <div class="grid-port">
+          <a class="work reveal" href="#" data-cat="cyber" data-title="Braço fechado" data-style="Cyber freehand" data-region="Braço inteiro" data-time="3 sessões de 5h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p01/900/900?grayscale" data-full="https://picsum.photos/seed/maronez-p01/1400/1750?grayscale" alt="Braço fechado em cyber freehand" loading="lazy" width="900" height="900"></figure>
+            <div class="work__cap"><strong>Braço fechado</strong><span>cyber</span></div>
+          </a>
+          <a class="work reveal" data-delay="1" href="#" data-cat="freehand" data-title="Panturrilha" data-style="Freehand" data-region="Panturrilha" data-time="1 sessão de 4h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p02/900/1125?grayscale" data-full="https://picsum.photos/seed/maronez-p02/1400/1750?grayscale" alt="Panturrilha em freehand" loading="lazy" width="900" height="1125"></figure>
+            <div class="work__cap"><strong>Panturrilha</strong><span>freehand</span></div>
+          </a>
+          <a class="work reveal" data-delay="2" href="#" data-cat="cyber curada" data-title="Antebraço curado" data-style="Cyber freehand" data-region="Antebraço" data-time="1 sessão de 5h, foto após 6 meses">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p03/900/1200?grayscale" data-full="https://picsum.photos/seed/maronez-p03/1400/1750?grayscale" alt="Antebraço cyber freehand curado" loading="lazy" width="900" height="1200"></figure>
+            <div class="work__cap"><strong>Antebraço</strong><span>cyber</span></div>
+          </a>
+          <a class="work reveal" href="#" data-cat="cyber" data-title="Peito" data-style="Cyber freehand" data-region="Peito" data-time="2 sessões de 4h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p04/900/1125?grayscale" data-full="https://picsum.photos/seed/maronez-p04/1400/1750?grayscale" alt="Peito em cyber freehand" loading="lazy" width="900" height="1125"></figure>
+            <div class="work__cap"><strong>Peito</strong><span>cyber</span></div>
+          </a>
+          <a class="work reveal" data-delay="1" href="#" data-cat="freehand" data-title="Coxa" data-style="Freehand" data-region="Coxa lateral" data-time="1 sessão de 6h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p05/900/1125?grayscale" data-full="https://picsum.photos/seed/maronez-p05/1400/1750?grayscale" alt="Coxa em freehand" loading="lazy" width="900" height="1125"></figure>
+            <div class="work__cap"><strong>Coxa</strong><span>freehand</span></div>
+          </a>
+          <a class="work reveal" data-delay="2" href="#" data-cat="cyber" data-title="Mão" data-style="Cyber freehand" data-region="Dorso da mão" data-time="1 sessão de 3h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p06/900/900?grayscale" data-full="https://picsum.photos/seed/maronez-p06/1400/1750?grayscale" alt="Mão em cyber freehand" loading="lazy" width="900" height="900"></figure>
+            <div class="work__cap"><strong>Mão</strong><span>cyber</span></div>
+          </a>
+          <a class="work reveal" href="#" data-cat="cyber" data-title="Costas fechadas" data-style="Cyber freehand" data-region="Costas inteiras" data-time="4 sessões de 6h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p07/900/1125?grayscale" data-full="https://picsum.photos/seed/maronez-p07/1400/1750?grayscale" alt="Costas fechadas em cyber freehand" loading="lazy" width="900" height="1125"></figure>
+            <div class="work__cap"><strong>Costas fechadas</strong><span>cyber</span></div>
+          </a>
+          <a class="work reveal" data-delay="1" href="#" data-cat="freehand curada" data-title="Ombro curado" data-style="Freehand" data-region="Ombro" data-time="1 sessão de 4h, foto após 1 ano">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p08/900/1125?grayscale" data-full="https://picsum.photos/seed/maronez-p08/1400/1750?grayscale" alt="Ombro em freehand curado" loading="lazy" width="900" height="1125"></figure>
+            <div class="work__cap"><strong>Ombro</strong><span>freehand</span></div>
+          </a>
+          <a class="work reveal" data-delay="2" href="#" data-cat="cyber" data-title="Pescoço" data-style="Cyber freehand" data-region="Pescoço lateral" data-time="1 sessão de 3h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p09/900/1125?grayscale" data-full="https://picsum.photos/seed/maronez-p09/1400/1750?grayscale" alt="Pescoço em cyber freehand" loading="lazy" width="900" height="1125"></figure>
+            <div class="work__cap"><strong>Pescoço</strong><span>cyber</span></div>
+          </a>
+          <a class="work reveal" href="#" data-cat="cyber curada" data-title="Canela curada" data-style="Cyber freehand" data-region="Canela" data-time="1 sessão de 5h, foto após 8 meses">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p10/900/1200?grayscale" data-full="https://picsum.photos/seed/maronez-p10/1400/1750?grayscale" alt="Canela em cyber freehand curada" loading="lazy" width="900" height="1200"></figure>
+            <div class="work__cap"><strong>Canela</strong><span>cyber</span></div>
+          </a>
+          <a class="work reveal" data-delay="1" href="#" data-cat="freehand" data-title="Costela" data-style="Freehand" data-region="Costela" data-time="1 sessão de 5h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p11/900/900?grayscale" data-full="https://picsum.photos/seed/maronez-p11/1400/1750?grayscale" alt="Costela em freehand" loading="lazy" width="900" height="900"></figure>
+            <div class="work__cap"><strong>Costela</strong><span>freehand</span></div>
+          </a>
+          <a class="work reveal" data-delay="2" href="#" data-cat="cyber" data-title="Perna fechada" data-style="Cyber freehand" data-region="Perna inteira" data-time="5 sessões de 6h">
+            <figure class="ph"><img src="https://picsum.photos/seed/maronez-p12/900/1125?grayscale" data-full="https://picsum.photos/seed/maronez-p12/1400/1750?grayscale" alt="Perna fechada em cyber freehand" loading="lazy" width="900" height="1125"></figure>
+            <div class="work__cap"><strong>Perna fechada</strong><span>cyber</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band" style="padding-top:0">
+      <div class="wrap cta-band__in">
+        <h2 class="display display--l reveal">Quer uma peça assim no teu corpo?</h2>
+        <div class="cta-band__actions reveal" data-delay="1">
+          <a class="btn btn--wide" href="orcamento.html">Pedir orçamento
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" aria-label="Detalhe da peça">
+    <div class="lightbox__in">
+      <div class="lightbox__img"><img src="" alt=""></div>
+      <div class="lightbox__body">
+        <div>
+          <h2 class="display display--m" data-lb-title></h2>
+          <dl style="margin-top:20px">
+            <dt>Estilo</dt><dd data-lb-style></dd>
+            <dt>Região</dt><dd data-lb-region></dd>
+            <dt>Sessão</dt><dd data-lb-time></dd>
+          </dl>
+        </div>
+        <a class="btn" href="orcamento.html" data-lb-quote>Quero algo assim
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <button class="lightbox__close" type="button" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__in">
+        <div>
+          <a class="brand" href="index.html"><img class="brand__mark" src="assets/img/logo-maronez.png" alt="" width="40" height="40" data-logo><span class="brand__name">Maronez</span></a>
+          <p style="margin-top:16px;max-width:36ch">Cyber freehand em Porto Alegre e guest spots pelo Brasil.</p>
+        </div>
+        <div>
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="cyber-freehand.html">Cyber Freehand</a></li>
+            <li><a href="freehand.html">Freehand</a></li>
+            <li><a href="loja.html">Loja</a></li>
+            <li><a href="sala.html">Sala de espera</a></li>
+            <li><a href="orcamento.html">Orçamento</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Redes</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@maronezzz" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@maronezzzz" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="#" data-wa="Fala Maronez! Quero fazer uma tattoo.">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Maronez. Seja Nask.</span>
+        <span>Site por <a href="https://lrgz.com.br" target="_blank" rel="noopener">LRGZ</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

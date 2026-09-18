@@ -1,0 +1,1 @@
+# Fonte de origem do logo (LOGO.jpg). Os arquivos usados no site estao em assets/img.

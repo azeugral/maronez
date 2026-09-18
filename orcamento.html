@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedir orçamento | Maronez</title>
+  <meta name="description" content="Monta tua ideia em quatro campos e manda pro WhatsApp do Maronez. Resposta com valor e data, normalmente no mesmo dia.">
+  <meta name="theme-color" content="#0b0a0a">
+  <link rel="canonical" href="https://azeugral.github.io/maronez/orcamento.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pedir orçamento | Maronez">
+  <meta property="og:description" content="Ideia, região, tamanho. O resto ele resolve no WhatsApp.">
+  <meta property="og:url" content="https://azeugral.github.io/maronez/orcamento.html">
+  <meta property="og:image" content="https://azeugral.github.io/maronez/assets/img/og.jpg">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Tektur:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap header__in">
+      <a class="brand" href="index.html" aria-label="Maronez, início">
+        <img class="brand__mark" src="assets/img/logo-maronez.png" alt="" width="40" height="40" data-logo>
+        <span class="brand__name">Maronez</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="portfolio.html">Portfólio</a></li>
+          <li><a class="nav__link" href="cyber-freehand.html">Cyber</a></li>
+          <li><a class="nav__link" href="freehand.html">Freehand</a></li>
+          <li><a class="nav__link" href="loja.html">Loja</a></li>
+          <li><a class="nav__link" href="sala.html">Sala</a></li>
+        </ul>
+        <a class="btn" href="orcamento.html">Orçamento</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+          <span class="nav-toggle__label">Menu</span><span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <ul class="menu__list">
+      <li><a class="menu__link" href="portfolio.html">Portfólio</a></li>
+      <li><a class="menu__link" href="cyber-freehand.html">Cyber Freehand</a></li>
+      <li><a class="menu__link" href="freehand.html">Freehand</a></li>
+      <li><a class="menu__link" href="loja.html">Loja</a></li>
+      <li><a class="menu__link" href="sala.html">Sala de espera</a></li>
+      <li><a class="menu__link" href="orcamento.html">Orçamento</a></li>
+    </ul>
+    <div class="menu__foot">
+      <a class="link-arrow" href="#" data-wa="Fala Maronez! Quero fazer uma tattoo.">WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+      <a class="muted" href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener">@maronezzzz</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1 class="display display--xl">Bora<br>tatuar</h1>
+        <p class="lead">Preenche o básico aqui e a mensagem já chega pronta no WhatsApp dele. Sem formulário chato, sem e-mail.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap split">
+        <form class="form reveal" id="form-orcamento" novalidate>
+          <div class="field">
+            <label for="nome">Teu nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="given-name" required placeholder="Como ele te chama">
+            <span class="field__err">Falta o nome.</span>
+          </div>
+
+          <div class="field">
+            <label for="ideia">A ideia</label>
+            <textarea id="ideia" name="ideia" required placeholder="Ex.: fechar o antebraço em cyber, algo que siga o músculo, sem figura"></textarea>
+            <small>Vibe, sensação, o que tu curte e o que não curte. Referência de outros artistas ajuda, mas não vai ser copiada.</small>
+            <span class="field__err">Conta um pouco da ideia.</span>
+          </div>
+
+          <div class="field">
+            <label for="regiao">Região do corpo</label>
+            <input id="regiao" name="regiao" type="text" required placeholder="Ex.: antebraço direito, do cotovelo ao punho">
+            <span class="field__err">Onde vai a peça?</span>
+          </div>
+
+          <fieldset class="field">
+            <legend>Tamanho</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="tamanho" value="Pequena (até 10 cm)"><span>Pequena</span></label>
+              <label class="chip"><input type="radio" name="tamanho" value="Média (10 a 20 cm)"><span>Média</span></label>
+              <label class="chip"><input type="radio" name="tamanho" value="Grande (mais de 20 cm)"><span>Grande</span></label>
+              <label class="chip"><input type="radio" name="tamanho" value="Fechar região inteira"><span>Fechar região</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Onde tu quer fazer</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="cidade" value="Porto Alegre" checked><span>Porto Alegre</span></label>
+              <label class="chip"><input type="radio" name="cidade" value="Próximo guest spot"><span>Próximo guest</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="ref">Referência do portfólio</label>
+            <input id="ref" name="ref" type="text" placeholder="Opcional. Preenche sozinho se tu vier do portfólio">
+          </div>
+
+          <div class="form__foot">
+            <button class="btn btn--wide" type="submit">Mandar no WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </button>
+            <span class="small muted">Abre o WhatsApp com a mensagem montada. Tu ainda pode editar antes de enviar.</span>
+          </div>
+          <p class="small accent" data-copied hidden>Mensagem copiada. Cola no chat que abriu.</p>
+        </form>
+
+        <aside class="reveal" data-delay="1">
+          <h2 class="display display--m">O que acontece depois</h2>
+          <ul class="aside-list" style="margin-top:24px">
+            <li><strong>Resposta com valor e data</strong><span>Normalmente no mesmo dia. Se ele estiver em guest, pode levar até 48 h.</span></li>
+            <!-- CONFIRMAR: valor do sinal e política de remarcação -->
+            <li><strong>Sinal pra segurar a data</strong><span>Valor combinado no chat, descontado do total. Remarcação com aviso prévio.</span></li>
+            <li><strong>Sem desenho antes do dia</strong><span>Cyber freehand nasce na pele. Tu aprova no espelho antes da máquina.</span></li>
+            <li><strong>Cuidados</strong><span>Ele explica no fim da sessão e manda por escrito no WhatsApp.</span></li>
+          </ul>
+          <p style="margin-top:32px">
+            <a class="link-arrow" href="#" data-wa="Fala Maronez! Tenho uma dúvida antes de pedir orçamento.">Só quero tirar uma dúvida
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </a>
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__in">
+        <div>
+          <a class="brand" href="index.html"><img class="brand__mark" src="assets/img/logo-maronez.png" alt="" width="40" height="40" data-logo><span class="brand__name">Maronez</span></a>
+          <p style="margin-top:16px;max-width:36ch">Cyber freehand em Porto Alegre e guest spots pelo Brasil.</p>
+        </div>
+        <div>
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="cyber-freehand.html">Cyber Freehand</a></li>
+            <li><a href="freehand.html">Freehand</a></li>
+            <li><a href="loja.html">Loja</a></li>
+            <li><a href="sala.html">Sala de espera</a></li>
+            <li><a href="orcamento.html">Orçamento</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Redes</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@maronezzz" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@maronezzzz" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="#" data-wa="Fala Maronez! Quero fazer uma tattoo.">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Maronez. Seja Nask.</span>
+        <span>Site por <a href="https://lrgz.com.br" target="_blank" rel="noopener">LRGZ</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

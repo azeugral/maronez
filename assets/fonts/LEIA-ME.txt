@@ -1,0 +1,6 @@
+Soltar aqui o arquivo da fonte StreetTech com um destes nomes:
+  StreetTech.woff2  (preferido)
+  StreetTech.ttf
+  StreetTech.otf
+O @font-face em css/style.css já aponta pra esses três. Enquanto o arquivo
+não existir, o site cai no fallback Tektur (Google Fonts).
