@@ -14,9 +14,9 @@ sala.html             sala de espera: Kick Buttowski na TV, playlist, vlogs
 orcamento.html        formulário que monta a mensagem e abre o WhatsApp
 css/style.css         tokens, componentes, animações, responsivo
 js/main.js            menu, reveal, filtros, lightbox, embeds, FAQ, orçamento
-assets/img/           logo, favicon, og
+assets/img/           logo, favicon, og; loja/ com as fotos dos produtos otimizadas
 assets/fonts/         StreetTech (soltar o arquivo aqui)
-assets/brand/         arquivo de origem do logo
+assets/brand/         arquivos de origem (logo e fotos dos produtos em PNG)
 ```
 
 ## Rodar local

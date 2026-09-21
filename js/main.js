@@ -157,6 +157,21 @@
     summary.addEventListener("click", (e) => { e.preventDefault(); toggle(); });
   });
 
+  /* ---------- Loja: variante de cor troca foto e link de compra ---------- */
+  document.querySelectorAll("[data-variants]").forEach((card) => {
+    const img = card.querySelector("[data-variant-img]");
+    const links = card.querySelectorAll("[data-variant-link]");
+    card.querySelectorAll('input[type="radio"]').forEach((r) => {
+      r.addEventListener("change", () => {
+        if (!r.checked) return;
+        img.src = r.dataset.img;
+        img.srcset = r.dataset.srcset || "";
+        img.alt = r.dataset.alt || img.alt;
+        links.forEach((a) => { a.href = r.dataset.href; });
+      });
+    });
+  });
+
   /* ---------- Embeds sob demanda (YouTube / Spotify só carregam no clique) ---------- */
   document.querySelectorAll("[data-embed]").forEach((box) => {
     const trigger = box.querySelector("[data-embed-load]");

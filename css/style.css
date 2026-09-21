@@ -655,3 +655,16 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .footer a, .menu__foot a, .product__ext, .small a { display: inline-block; padding-block: 6px; }
 .footer ul { gap: 2px; }
 .lightbox__close { width: 48px; height: 48px; }
+
+/* ---------- Loja: três produtos na mesma linha, fotos reais ---------- */
+.products--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 36px); }
+.products--3 .product .ph { aspect-ratio: 3 / 2; }
+.products--3 .product__name { font-size: 1.15rem; }
+.products--3 .product .btn { justify-self: start; }
+.ph--real img { filter: none; }
+.ph--real::after { opacity: 0; }
+.ph--real:hover img, .ph--real:focus-within img { filter: none; transform: scale(1.03); }
+.product__price--soon { color: var(--muted); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.product .chips { margin-block: 2px 4px; }
+@media (max-width: 900px) and (min-width: 701px) { .products--3 .product__row { flex-wrap: wrap; } }
+@media (max-width: 700px) { .products--3 { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
