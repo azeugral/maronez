@@ -1,14 +1,13 @@
 # Maronez | Seja Nask
 
-Site do tatuador Maronez (cyber freehand, Porto Alegre). HTML, CSS e JS puros, sem build.
+Site do tatuador Maronez (freehand, Porto Alegre). HTML, CSS e JS puros, sem build.
 
 ## Estrutura
 
 ```
 index.html            home: hero, portfólio, artista, localização, CTA
-portfolio.html        grade com filtros (cyber / freehand / curada) e lightbox
-cyber-freehand.html   página do estilo cyber freehand
-freehand.html         página do estilo freehand
+portfolio.html        grade com filtros (freehand / ignorant / curada) e lightbox
+freehand.html         página do estilo freehand (comparação com ignorant, sessão, FAQ)
 loja.html             camiseta e bandeira, checkout na loja parceira
 sala.html             sala de espera: Kick Buttowski na TV, playlist, vlogs
 orcamento.html        formulário que monta a mensagem e abre o WhatsApp
