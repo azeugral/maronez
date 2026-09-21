@@ -12,7 +12,7 @@
     tiktok: "https://www.tiktok.com/@maronezzz",
     youtube: "https://www.youtube.com/@maronezzzz",
     playlist: "63ik4dkmrl8umtK1OLSJS7",
-    // CONFIRMAR: ID do vídeo do Kick Buttowski que ele quer na TV (hoje: 1h de episódios dublados).
+    // Vídeo do Kick Buttowski na TV (confirmado: 1h de episódios dublados).
     kickVideoId: "-5EEwggolgM",
   };
   window.MARONEZ = CONFIG;
