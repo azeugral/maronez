@@ -12,7 +12,9 @@
   <meta property="og:description" content="Ideia, região, tamanho. O resto ele resolve no WhatsApp.">
   <meta property="og:url" content="https://azeugral.github.io/maronez/orcamento.html">
   <meta property="og:image" content="https://azeugral.github.io/maronez/assets/img/og.jpg">
-  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/img/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +23,7 @@
 </head>
 <body>
 
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="header">
     <div class="wrap header__in">
       <a class="brand" href="index.html" aria-label="Maronez, início">
@@ -58,7 +61,7 @@
     </div>
   </div>
 
-  <main>
+  <main id="conteudo">
     <section class="page-head">
       <div class="wrap">
         <h1 class="display display--xl">Bora<br>tatuar</h1>
@@ -127,7 +130,7 @@
             <!-- CONFIRMAR: valor do sinal e política de remarcação -->
             <li><strong>Sinal pra segurar a data</strong><span>Valor combinado no chat, descontado do total. Remarcação com aviso prévio.</span></li>
             <li><strong>Sem desenho antes do dia</strong><span>Freehand nasce na pele. Tu aprova no espelho antes da máquina.</span></li>
-            <li><strong>Cuidados</strong><span>Ele explica no fim da sessão e manda por escrito no WhatsApp.</span></li>
+            <li><strong>Cuidados</strong><span>Ele explica no fim da sessão, e o passo a passo fica na <a href="cuidados.html" style="color:var(--skin);text-decoration:underline">página de cuidados</a>.</span></li>
           </ul>
           <p style="margin-top:32px">
             <a class="link-arrow" href="#" data-wa="Fala Maronez! Tenho uma dúvida antes de pedir orçamento.">Só quero tirar uma dúvida
@@ -145,6 +148,11 @@
         <div>
           <a class="brand" href="index.html"><img class="brand__mark" src="assets/img/logo-maronez.png" alt="" width="40" height="40" data-logo><span class="brand__name">Maronez</span></a>
           <p style="margin-top:16px;max-width:36ch">Freehand em Porto Alegre e guest spots pelo Brasil.</p>
+          <ul class="footer__contact">
+            <li>Porto Alegre, RS</li>
+            <li><a href="#" data-wa="Fala Maronez! Quero fazer uma tattoo.">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener">@maronezzzz</a></li>
+          </ul>
         </div>
         <div>
           <h4>Páginas</h4>
@@ -154,6 +162,7 @@
             <li><a href="loja.html">Loja</a></li>
             <li><a href="sala.html">Sala de espera</a></li>
             <li><a href="orcamento.html">Orçamento</a></li>
+            <li><a href="cuidados.html">Cuidados</a></li>
           </ul>
         </div>
         <div>

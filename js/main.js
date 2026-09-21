@@ -84,18 +84,29 @@
   /* ---------- Portfólio: filtros ---------- */
   const filters = document.querySelectorAll(".filter");
   const items = document.querySelectorAll(".grid-port .work");
+  const loadMore = document.querySelector("[data-load-more]");
+  const LIMIT = 18;
+  let expanded = false;
+  const applyFilter = (cat) => {
+    let shown = 0;
+    items.forEach((it) => {
+      const match = cat === "all" || (it.dataset.cat || "").split(" ").includes(cat);
+      const capped = !expanded && cat === "all" && shown >= LIMIT;
+      it.classList.toggle("is-hidden", !match || capped);
+      if (match) shown++;
+    });
+    if (loadMore) loadMore.parentElement.hidden = expanded || cat !== "all" || items.length <= LIMIT;
+  };
   if (filters.length && items.length) {
+    applyFilter("all");
     filters.forEach((btn) => {
       btn.addEventListener("click", () => {
         filters.forEach((b) => b.setAttribute("aria-pressed", "false"));
         btn.setAttribute("aria-pressed", "true");
-        const cat = btn.dataset.filter;
-        items.forEach((it) => {
-          const show = cat === "all" || (it.dataset.cat || "").split(" ").includes(cat);
-          it.classList.toggle("is-hidden", !show);
-        });
+        applyFilter(btn.dataset.filter);
       });
     });
+    if (loadMore) loadMore.addEventListener("click", () => { expanded = true; applyFilter("all"); });
   }
 
   /* ---------- Portfólio: lightbox ---------- */

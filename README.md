@@ -11,6 +11,8 @@ freehand.html         página do estilo freehand (comparação com ignorant, ses
 loja.html             camiseta e bandeira, checkout na loja parceira
 sala.html             sala de espera: Kick Buttowski na TV, playlist, vlogs
 orcamento.html        formulário que monta a mensagem e abre o WhatsApp
+cuidados.html         guia de cura (texto padrão, o Maronez revisa)
+404.html              página de erro no padrão do site
 css/style.css         tokens, componentes, animações, responsivo
 js/main.js            menu, reveal, filtros, lightbox, embeds, FAQ, orçamento
 assets/img/           logo, favicon, og; loja/ e portfolio/ com as fotos otimizadas (1200 e 640 px)

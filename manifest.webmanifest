@@ -1,0 +1,9 @@
+{
+  "name": "Maronez | Seja Nask",
+  "short_name": "Maronez",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0a0a",
+  "theme_color": "#0b0a0a",
+  "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+}

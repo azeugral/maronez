@@ -14,12 +14,15 @@
   <meta property="og:url" content="https://azeugral.github.io/maronez/">
   <meta property="og:image" content="https://azeugral.github.io/maronez/assets/img/og.jpg">
   <meta property="og:locale" content="pt_BR">
-  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/img/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Tektur:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- CONFIRMAR: adicionar ao JSON-LD "telephone", "streetAddress", "postalCode" e "openingHoursSpecification" quando tiver os dados -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,6 +33,9 @@
     "url": "https://azeugral.github.io/maronez/",
     "image": "https://azeugral.github.io/maronez/assets/img/og.jpg",
     "address": { "@type": "PostalAddress", "addressLocality": "Porto Alegre", "addressRegion": "RS", "addressCountry": "BR" },
+    "areaServed": ["Porto Alegre", "Curitiba", "São Paulo"],
+    "priceRange": "$$",
+    "knowsAbout": ["tatuagem freehand", "tatuagem ignorant"],
     "sameAs": [
       "https://www.instagram.com/maronezzzz/",
       "https://www.tiktok.com/@maronezzz",
@@ -40,6 +46,7 @@
 </head>
 <body>
 
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="header">
     <div class="wrap header__in">
       <a class="brand" href="index.html" aria-label="Maronez, início">
@@ -77,7 +84,7 @@
     </div>
   </div>
 
-  <main>
+  <main id="conteudo">
 
     <!-- HERO -->
     <section class="hero">
@@ -222,12 +229,12 @@
             <li class="city">
               <span class="city__name">São Paulo</span>
               <span class="city__when">Próxima data em breve</span>
-              <span class="tag tag--open">Lista de espera</span>
+              <a class="tag tag--open" href="https://docs.google.com/forms/d/e/1FAIpQLSfwezW4VL97CTlI0jnh3Lnm0B7QVS1EsdtJOcn3Nfq_TPLYdg/viewform" target="_blank" rel="noopener">Entrar na lista de espera</a>
             </li>
             <li class="city city--cta">
               <span class="city__name">Tua cidade?</span>
-              <span class="city__when">Junta gente e chama no WhatsApp. Com agenda cheia, ele vai.</span>
-              <a class="link-arrow" href="#" data-wa="Fala Maronez! Quero te trazer pra um guest na minha cidade.">Chamar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+              <span class="city__when">Entra na lista com tua cidade. Com gente suficiente, ele marca o guest.</span>
+              <a class="link-arrow" href="https://docs.google.com/forms/d/e/1FAIpQLSfwezW4VL97CTlI0jnh3Lnm0B7QVS1EsdtJOcn3Nfq_TPLYdg/viewform" target="_blank" rel="noopener">Entrar na lista <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
             </li>
           </ul>
         </div>
@@ -255,6 +262,11 @@
         <div>
           <a class="brand" href="index.html"><img class="brand__mark" src="assets/img/logo-maronez.png" alt="" width="40" height="40" data-logo><span class="brand__name">Maronez</span></a>
           <p style="margin-top:16px;max-width:36ch">Freehand em Porto Alegre e guest spots pelo Brasil.</p>
+          <ul class="footer__contact">
+            <li>Porto Alegre, RS</li>
+            <li><a href="#" data-wa="Fala Maronez! Quero fazer uma tattoo.">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener">@maronezzzz</a></li>
+          </ul>
         </div>
         <div>
           <h4>Páginas</h4>
@@ -264,6 +276,7 @@
             <li><a href="loja.html">Loja</a></li>
             <li><a href="sala.html">Sala de espera</a></li>
             <li><a href="orcamento.html">Orçamento</a></li>
+            <li><a href="cuidados.html">Cuidados</a></li>
           </ul>
         </div>
         <div>
