@@ -105,7 +105,7 @@
     const title = lb.querySelector("[data-lb-title]");
     const style = lb.querySelector("[data-lb-style]");
     const region = lb.querySelector("[data-lb-region]");
-    const time = lb.querySelector("[data-lb-time]");
+    const state = lb.querySelector("[data-lb-state]");
     const quote = lb.querySelector("[data-lb-quote]");
     document.querySelectorAll(".grid-port .work").forEach((w) => {
       w.addEventListener("click", (e) => {
@@ -116,7 +116,7 @@
         title.textContent = w.dataset.title || "";
         style.textContent = w.dataset.style || "";
         region.textContent = w.dataset.region || "";
-        time.textContent = w.dataset.time || "";
+        state.textContent = w.dataset.state || "";
         quote.href = `orcamento.html?ref=${encodeURIComponent(w.dataset.title || "")}`;
         lb.showModal();
       });

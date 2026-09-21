@@ -3,3 +3,5 @@ Thumbs.db
 *.psd
 *.ai
 node_modules/
+assets/brand/fotos/
+*.zip
