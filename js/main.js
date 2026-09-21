@@ -4,9 +4,8 @@
 
   /* ---------- Config: tudo que o cliente pode trocar fica aqui ---------- */
   const CONFIG = {
-    // CONFIRMAR: número com DDI para abrir o WhatsApp com mensagem pronta (ex.: "5551999999999").
-    // Vazio = usa o link de mensagem do Instagram (sem texto pré-preenchido).
-    whatsappNumber: "",
+    // Número com DDI: abre o WhatsApp com a mensagem pronta.
+    whatsappNumber: "555191248594",
     whatsappMessageLink: "https://wa.me/message/BCC4OXL3C5G3M1",
     instagram: "https://www.instagram.com/maronezzzz/",
     tiktok: "https://www.tiktok.com/@maronezzz",
