@@ -186,33 +186,50 @@
     <hr class="hairline">
 
     <!-- LOCALIZAÇÃO -->
-    <section class="section">
-      <div class="wrap split">
-        <div class="reveal">
+    <section class="section local">
+      <div class="wrap local__grid">
+        <figure class="ph local__photo reveal">
+          <img src="assets/img/portfolio/estudio.jpg" srcset="assets/img/portfolio/estudio-800.jpg 800w, assets/img/portfolio/estudio.jpg 1400w" sizes="(max-width: 900px) 100vw, 45vw" alt="Maronez no estúdio, entre plantas e a janela para a cidade" width="1080" height="1440" loading="lazy">
+        </figure>
+        <div class="local__body reveal" data-delay="1">
           <h2 class="display display--l">Porto Alegre</h2>
           <!-- CONFIRMAR: bairro, endereço, horário e link do Maps -->
-          <p class="lead" style="margin-top:24px">Estúdio fixo na zona norte, atendimento com hora marcada.</p>
-          <ul class="aside-list" style="margin-top:28px">
-            <li><strong>Endereço</strong><span>Rua Exemplo, 000, Bairro. Porto Alegre, RS.</span></li>
-            <li><strong>Horário</strong><span>Terça a sábado, 10h às 19h. Só com agendamento.</span></li>
-            <li><strong>Como chegar</strong><span>Estacionamento na rua. A duas quadras da parada de ônibus.</span></li>
-          </ul>
-          <p style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
+          <p class="lead" style="margin-top:20px">Estúdio fixo na zona norte, atendimento com hora marcada.</p>
+          <dl class="local__info">
+            <div><dt>Endereço</dt><dd>Rua Exemplo, 000, Bairro<br>Porto Alegre, RS</dd></div>
+            <div><dt>Horário</dt><dd>Terça a sábado, 10h às 19h<br>Só com agendamento</dd></div>
+            <div><dt>Como chegar</dt><dd>Estacionamento na rua<br>Duas quadras da parada de ônibus</dd></div>
+          </dl>
+          <p style="margin-top:8px">
             <a class="btn btn--ghost" href="https://maps.google.com/?q=Porto+Alegre" target="_blank" rel="noopener">Abrir no Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
           </p>
         </div>
-        <div class="reveal" data-delay="1">
-          <figure class="ph" style="aspect-ratio:4/3;margin-bottom:32px"><img src="assets/img/portfolio/estudio.jpg" srcset="assets/img/portfolio/estudio-800.jpg 800w, assets/img/portfolio/estudio.jpg 1400w" sizes="(max-width: 900px) 100vw, 50vw" alt="Maronez no estúdio, entre plantas e a janela para a cidade" width="1080" height="1440" loading="lazy"></figure>
-          <h3 class="display display--m">Guest spots</h3>
-          <p class="muted" style="margin:14px 0 24px;max-width:40ch">De tempos em tempos ele sai de Porto Alegre pra tatuar em outra cidade. Vaga fecha rápido.</p>
+      </div>
+
+      <div class="wrap">
+        <div class="guest reveal">
+          <div class="guest__head">
+            <h3 class="display display--m">Guest spots</h3>
+            <p class="muted">De tempos em tempos ele sai de Porto Alegre pra tatuar em outra cidade. Vaga fecha rápido.</p>
+          </div>
           <!-- CONFIRMAR: cidades e datas reais -->
-          <table class="agenda">
-            <thead><tr><th>Cidade</th><th>Quando</th><th class="sr-only">Status</th></tr></thead>
-            <tbody>
-              <tr><td>Curitiba</td><td>13 a 17 de setembro</td><td><span class="tag">Encerrado</span></td></tr>
-              <tr><td>São Paulo</td><td>Próxima data em breve</td><td><span class="tag tag--open">Lista de espera</span></td></tr>
-            </tbody>
-          </table>
+          <ul class="cities">
+            <li class="city city--closed">
+              <span class="city__name">Curitiba</span>
+              <span class="city__when">13 a 17 de setembro</span>
+              <span class="tag">Encerrado</span>
+            </li>
+            <li class="city">
+              <span class="city__name">São Paulo</span>
+              <span class="city__when">Próxima data em breve</span>
+              <span class="tag tag--open">Lista de espera</span>
+            </li>
+            <li class="city city--cta">
+              <span class="city__name">Tua cidade?</span>
+              <span class="city__when">Junta gente e chama no WhatsApp. Com agenda cheia, ele vai.</span>
+              <a class="link-arrow" href="#" data-wa="Fala Maronez! Quero te trazer pra um guest na minha cidade.">Chamar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

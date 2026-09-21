@@ -655,3 +655,35 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .product .chips { margin-block: 2px 4px; }
 @media (max-width: 900px) and (min-width: 701px) { .products--3 .product__row { flex-wrap: wrap; } }
 @media (max-width: 700px) { .products--3 { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+
+/* ---------- Home: localização + guest spots ---------- */
+.local__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.local__photo { aspect-ratio: 4 / 5; }
+.local__body { padding-block: 8px; }
+.local__info { display: grid; gap: 0; margin: 28px 0 24px; border-top: 1px solid var(--line); }
+.local__info > div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.local__info dt { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--skin); padding-top: 3px; }
+.local__info dd { margin: 0; color: var(--text); line-height: 1.5; }
+
+.guest { margin-top: clamp(56px, 8vw, 110px); padding-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--line); }
+.guest__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: end; margin-bottom: 28px; }
+.guest__head p { max-width: 44ch; justify-self: end; text-align: right; }
+.cities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); }
+.city { background: var(--ink); padding: 28px 24px; display: grid; align-content: start; gap: 10px; min-height: 200px; }
+.city__name { font-family: var(--font-display); font-size: clamp(1.6rem, 2.6vw, 2.4rem); text-transform: uppercase; color: var(--skin); line-height: 1; }
+.city__when { color: var(--muted); }
+.city .tag { justify-self: start; margin-top: auto; }
+.city--closed .city__name { color: var(--muted); }
+.city--cta { background: var(--red-deep); }
+.city--cta .city__name, .city--cta .link-arrow { color: var(--skin); }
+.city--cta .city__when { color: color-mix(in srgb, var(--skin) 70%, transparent); }
+.city--cta .link-arrow { margin-top: auto; }
+@media (max-width: 900px) {
+  .local__grid { grid-template-columns: minmax(0, 1fr); }
+  .local__photo { aspect-ratio: 4 / 3; }
+  .guest__head { grid-template-columns: minmax(0, 1fr); }
+  .guest__head p { justify-self: start; text-align: left; }
+  .cities { grid-template-columns: minmax(0, 1fr); }
+  .city { min-height: 0; }
+}
+@media (max-width: 480px) { .local__info > div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
