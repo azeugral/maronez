@@ -22,7 +22,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Tektur:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <!-- CONFIRMAR: adicionar ao JSON-LD "streetAddress", "postalCode" e "openingHoursSpecification" quando tiver os dados -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,6 +68,7 @@
   </header>
 
   <div class="menu" id="menu">
+    <div class="menu__panel">
     <ul class="menu__list">
       <li><a class="menu__link" href="portfolio.html">Portfólio</a></li>
       <li><a class="menu__link" href="freehand.html">Freehand</a></li>
@@ -81,6 +81,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </a>
       <a class="muted" href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener">@maronezzzz</a>
+    </div>
     </div>
   </div>
 
@@ -200,15 +201,14 @@
         </figure>
         <div class="local__body reveal" data-delay="1">
           <h2 class="display display--l">Porto Alegre</h2>
-          <!-- CONFIRMAR: bairro, endereço, horário e link do Maps -->
-          <p class="lead" style="margin-top:20px">Estúdio fixo na zona norte, atendimento com hora marcada.</p>
+          <p class="lead" style="margin-top:20px">Base em Porto Alegre, sempre com hora marcada. Ele troca de estúdio com frequência, então o endereço do momento vai junto com a confirmação no WhatsApp.</p>
           <dl class="local__info">
-            <div><dt>Endereço</dt><dd>Rua Exemplo, 000, Bairro<br>Porto Alegre, RS</dd></div>
-            <div><dt>Horário</dt><dd>Terça a sábado, 10h às 19h<br>Só com agendamento</dd></div>
-            <div><dt>Como chegar</dt><dd>Estacionamento na rua<br>Duas quadras da parada de ônibus</dd></div>
+            <div><dt>Atendimento</dt><dd>Só com agendamento<br>Sem encaixe de porta</dd></div>
+            <div><dt>Endereço</dt><dd>Enviado no WhatsApp<br>ao confirmar a data</dd></div>
+            <div><dt>Fora de POA</dt><dd>Guest spots pelo Brasil<br>Lista de espera abaixo</dd></div>
           </dl>
           <p style="margin-top:8px">
-            <a class="btn btn--ghost" href="https://maps.google.com/?q=Porto+Alegre" target="_blank" rel="noopener">Abrir no Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            <a class="btn btn--ghost" href="orcamento.html">Pedir orçamento</a>
           </p>
         </div>
       </div>
@@ -217,26 +217,24 @@
         <div class="guest reveal">
           <div class="guest__head">
             <h3 class="display display--m">Guest spots</h3>
-            <p class="muted">De tempos em tempos ele sai de Porto Alegre pra tatuar em outra cidade. Vaga fecha rápido.</p>
+            <p class="muted">De tempos em tempos ele sai de Porto Alegre pra tatuar em outra cidade. Por onde já passou e como trazer pra tua.</p>
           </div>
-          <!-- CONFIRMAR: cidades e datas reais -->
-          <ul class="cities">
-            <li class="city city--closed">
-              <span class="city__name">Curitiba</span>
-              <span class="city__when">13 a 17 de setembro</span>
-              <span class="tag">Encerrado</span>
-            </li>
-            <li class="city">
-              <span class="city__name">São Paulo</span>
-              <span class="city__when">Próxima data em breve</span>
-              <a class="tag tag--open" href="https://docs.google.com/forms/d/e/1FAIpQLSfwezW4VL97CTlI0jnh3Lnm0B7QVS1EsdtJOcn3Nfq_TPLYdg/viewform" target="_blank" rel="noopener">Entrar na lista de espera</a>
-            </li>
-            <li class="city city--cta">
+          <div class="guest__grid">
+            <table class="agenda">
+              <thead><tr><th>Cidade</th><th>Quando</th><th class="sr-only">Status</th></tr></thead>
+              <tbody>
+                <tr><td>São Paulo</td><td>1 a 9 de abril de 2026</td><td><span class="tag">Encerrado</span></td></tr>
+                <tr><td>Belo Horizonte</td><td>1 a 7 de fevereiro de 2026</td><td><span class="tag">Encerrado</span></td></tr>
+                <tr><td>Curitiba</td><td>10 a 14 de setembro de 2025</td><td><span class="tag">Encerrado</span></td></tr>
+                <tr><td>São Paulo</td><td>11 a 17 de agosto de 2025</td><td><span class="tag">Encerrado</span></td></tr>
+              </tbody>
+            </table>
+            <div class="city city--cta">
               <span class="city__name">Tua cidade?</span>
-              <span class="city__when">Entra na lista com tua cidade. Com gente suficiente, ele marca o guest.</span>
-              <a class="link-arrow" href="https://docs.google.com/forms/d/e/1FAIpQLSfwezW4VL97CTlI0jnh3Lnm0B7QVS1EsdtJOcn3Nfq_TPLYdg/viewform" target="_blank" rel="noopener">Entrar na lista <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-            </li>
-          </ul>
+              <span class="city__when">Entra na lista com tua cidade. Com gente suficiente, ele marca o próximo guest.</span>
+              <a class="btn btn--ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSfwezW4VL97CTlI0jnh3Lnm0B7QVS1EsdtJOcn3Nfq_TPLYdg/viewform" target="_blank" rel="noopener">Entrar na lista <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -65,6 +65,10 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && document.body.classList.contains("menu-open")) toggle.click();
     });
+    // clique fora do painel fecha
+    document.querySelector(".menu")?.addEventListener("click", (e) => {
+      if (e.target.classList.contains("menu")) toggle.click();
+    });
   }
 
   /* ---------- Reveal on scroll (IntersectionObserver, nunca scroll listener) ---------- */
