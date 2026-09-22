@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /teste/
 Sitemap: https://azeugral.github.io/maronez/sitemap.xml

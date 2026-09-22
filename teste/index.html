@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[TESTE] Maronez</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b0a0a">
+  <link rel="icon" href="../assets/img/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main id="conteudo">
+    <section class="section">
+      <div class="wrap" style="max-width:760px">
+        <h1 class="display display--l">Modo teste</h1>
+        <p class="lead" style="margin-top:20px">Coloca o número que vai receber as mensagens (com DDI e DDD, só números) e abre as páginas. Nada disso fica salvo no site: o número vive só nesta aba.</p>
+
+        <form class="form" id="form-teste" style="margin-top:32px">
+          <div class="field">
+            <label for="wa">Número de teste</label>
+            <input id="wa" type="tel" inputmode="numeric" placeholder="5551999999999" required>
+            <small>Ex.: 55 (Brasil) + 51 (DDD) + número.</small>
+          </div>
+          <div class="form__foot">
+            <button class="btn" type="submit">Salvar número</button>
+          </div>
+        </form>
+
+        <div id="links" hidden style="margin-top:40px">
+          <h2 class="display display--m">Páginas</h2>
+          <ul class="aside-list" style="margin-top:20px">
+            <li><strong><a id="l-loja" href="loja.html">Loja</a></strong><span>Encomenda de bandeira e bottom: quantidade, nome, cidade e arte.</span></li>
+            <li><strong><a id="l-orc" href="orcamento.html">Orçamento</a></strong><span>Formulário de tattoo com imagem de referência opcional.</span></li>
+          </ul>
+          <p class="small muted" style="margin-top:24px">As outras páginas do menu levam ao site real, com o número do Maronez.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const inp = document.querySelector("#wa");
+    const links = document.querySelector("#links");
+    const saved = sessionStorage.getItem("maronez_wa_teste") || new URLSearchParams(location.search).get("wa") || "";
+    const show = (n) => {
+      document.querySelector("#l-loja").href = "loja.html?wa=" + n;
+      document.querySelector("#l-orc").href = "orcamento.html?wa=" + n;
+      links.hidden = false;
+    };
+    if (saved) { inp.value = saved; show(saved); }
+    document.querySelector("#form-teste").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const n = inp.value.replace(/\D/g, "");
+      if (n.length < 12) { inp.closest(".field").classList.add("is-invalid"); return; }
+      sessionStorage.setItem("maronez_wa_teste", n);
+      show(n);
+    });
+  </script>
+</body>
+</html>
