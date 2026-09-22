@@ -186,6 +186,52 @@
     });
   });
 
+  /* ---------- Loja: mini-checkout que fecha no WhatsApp ---------- */
+  const co = document.querySelector(".checkout");
+  if (co) {
+    const form = co.querySelector("#form-checkout");
+    const money = (v) => "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: v % 1 ? 2 : 0 });
+    let item = { name: "", price: 0, qty: 1 };
+    const render = () => {
+      co.querySelector("[data-co-qty]").textContent = item.qty;
+      co.querySelector("[data-co-total]").textContent = item.price ? money(item.price * item.qty) : "a confirmar";
+      co.querySelector("[data-co-unit]").textContent = item.price ? money(item.price) + " cada" : "valor confirmado no WhatsApp";
+    };
+    document.querySelectorAll("[data-order]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        item = { name: btn.dataset.name, price: Number(btn.dataset.price) || 0, qty: 1 };
+        co.querySelector("[data-co-name]").textContent = item.name;
+        const img = co.querySelector("[data-co-img]"); img.src = btn.dataset.img; img.alt = item.name;
+        form.reset(); form.querySelectorAll(".is-invalid").forEach((f) => f.classList.remove("is-invalid"));
+        render(); co.showModal();
+      });
+    });
+    co.querySelectorAll("[data-qty]").forEach((b) => b.addEventListener("click", () => {
+      item.qty = Math.min(20, Math.max(1, item.qty + Number(b.dataset.qty))); render();
+    }));
+    co.querySelector("[data-checkout-close]").addEventListener("click", () => co.close());
+    co.addEventListener("click", (e) => { if (e.target === co) co.close(); });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let ok = true;
+      form.querySelectorAll("[required]").forEach((f) => {
+        const bad = !f.value.trim(); f.closest(".field").classList.toggle("is-invalid", bad); if (bad) ok = false;
+      });
+      if (!ok) { form.querySelector(".is-invalid input")?.focus(); return; }
+      const v = (id) => (form.querySelector("#" + id)?.value || "").trim();
+      const msg = [
+        "Fala Maronez! Quero encomendar:",
+        `${item.qty}x ${item.name}` + (item.price ? ` (${money(item.price)} cada, total ${money(item.price * item.qty)})` : ""),
+        `Nome: ${v("co-nome")}`,
+        `Cidade: ${v("co-cidade")}`,
+        v("co-obs") && `Obs: ${v("co-obs")}`,
+        "Me passa o valor do frete e a forma de pagamento?",
+      ].filter(Boolean).join("\n");
+      window.open(waHref(msg), "_blank", "noopener");
+      co.close();
+    });
+  }
+
   /* ---------- Embeds sob demanda (YouTube / Spotify só carregam no clique) ---------- */
   document.querySelectorAll("[data-embed]").forEach((box) => {
     const trigger = box.querySelector("[data-embed-load]");

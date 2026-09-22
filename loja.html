@@ -66,7 +66,7 @@
     <section class="page-head">
       <div class="wrap">
         <h1 class="display display--xl">Veste<br>Nask</h1>
-        <p class="lead">Camiseta oficial à venda pela Golden Design. Bandeira e bottom chegam em breve.</p>
+        <p class="lead">Camiseta pela Golden Design. Bandeira e bottom sob encomenda: tu monta o pedido aqui e fecha pagamento e entrega com ele no WhatsApp.</p>
       </div>
     </section>
 
@@ -92,20 +92,21 @@
             <div class="ph ph--real">
               <img src="assets/img/loja/bandeira.jpg" srcset="assets/img/loja/bandeira-800.jpg 800w, assets/img/loja/bandeira.jpg 1200w" sizes="(max-width: 700px) 100vw, 33vw" alt="Bandeira vermelha Nask com a frase 'Sou apenas uma criança que sobreviveu'" width="1200" height="800" loading="lazy">
             </div>
-            <div class="product__row"><h2 class="product__name">Bandeira Nask</h2><span class="product__price product__price--soon">Em breve</span></div>
-            <p>"Sou apenas uma criança que sobreviveu." Vermelha, com ilhós.</p>
-            <!-- CONFIRMAR: link e preço da bandeira quando abrir a venda -->
-            <a class="btn btn--ghost" href="#" data-wa="Fala Maronez! Me avisa quando a bandeira Nask sair?">Avisa quando sair</a>
+            <div class="product__row"><h2 class="product__name">Bandeira Nask</h2><span class="product__price">R$ 100</span></div>
+            <p>"Sou apenas uma criança que sobreviveu." Vermelha, com ilhós, feita sob encomenda.</p>
+            <button class="btn" type="button" data-order data-name="Bandeira Nask" data-price="100" data-img="assets/img/loja/bandeira-800.jpg">Encomendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <span class="product__ext">Pagamento e entrega pelo WhatsApp</span>
           </article>
 
           <article class="product reveal" data-delay="2">
             <div class="ph ph--real">
               <img src="assets/img/loja/bottom.jpg" srcset="assets/img/loja/bottom-800.jpg 800w, assets/img/loja/bottom.jpg 1200w" sizes="(max-width: 700px) 100vw, 33vw" alt="Bottom redondo Seja Nask com o rosto do logo em preto e branco" width="1200" height="800" loading="lazy">
             </div>
-            <div class="product__row"><h2 class="product__name">Bottom Seja Nask</h2><span class="product__price product__price--soon">Em breve</span></div>
+            <div class="product__row"><h2 class="product__name">Bottom Seja Nask</h2><span class="product__price product__price--soon">Valor no WhatsApp</span></div>
             <p>O rosto do logo em bottom pra jaqueta, mochila ou boné.</p>
-            <!-- CONFIRMAR: link e preço do bottom quando sair -->
-            <a class="btn btn--ghost" href="#" data-wa="Fala Maronez! Me avisa quando o bottom Seja Nask sair?">Avisa quando sair</a>
+            <!-- CONFIRMAR: preço do bottom (data-price) -->
+            <button class="btn" type="button" data-order data-name="Bottom Seja Nask" data-price="" data-img="assets/img/loja/bottom-800.jpg">Encomendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <span class="product__ext">Pagamento e entrega pelo WhatsApp</span>
           </article>
 
         </div>
@@ -121,12 +122,59 @@
         </div>
         <ul class="aside-list reveal" data-delay="1">
           <li><strong>Camiseta: Golden Design</strong><span>Tamanho, pagamento (Pix, cartão ou boleto), frete e troca são todos no site da Golden Design. O site do Maronez não guarda dado de pagamento.</span></li>
-          <li><strong>Bandeira e bottom</strong><span>Ainda sem venda aberta. Clica em "Avisa quando sair" que ele te chama no WhatsApp quando liberar.</span></li>
+          <li><strong>Bandeira e bottom: encomenda</strong><span>Clica em "Encomendar", informa quantidade, nome e cidade, e o pedido chega montado no WhatsApp dele. Pagamento (Pix ou cartão), frete e prazo são confirmados ali.</span></li>
           <li><strong>Dúvida sobre produto</strong><span>Chama no WhatsApp ou no direct que ele responde.</span></li>
         </ul>
       </div>
     </section>
   </main>
+
+  <dialog class="checkout" aria-labelledby="checkout-title">
+    <form class="checkout__in" id="form-checkout" novalidate>
+      <button class="lightbox__close" type="button" aria-label="Fechar" data-checkout-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h2 class="display display--m" id="checkout-title">Teu pedido</h2>
+
+      <div class="checkout__item">
+        <img src="" alt="" width="88" height="88" data-co-img>
+        <div>
+          <strong data-co-name></strong>
+          <span class="muted" data-co-unit></span>
+        </div>
+        <div class="qty" role="group" aria-label="Quantidade">
+          <button type="button" data-qty="-1" aria-label="Menos um">−</button>
+          <output data-co-qty>1</output>
+          <button type="button" data-qty="1" aria-label="Mais um">+</button>
+        </div>
+      </div>
+
+      <div class="checkout__fields">
+        <div class="field">
+          <label for="co-nome">Teu nome</label>
+          <input id="co-nome" type="text" autocomplete="name" required placeholder="Nome e sobrenome">
+          <span class="field__err">Falta o nome.</span>
+        </div>
+        <div class="field">
+          <label for="co-cidade">Cidade e estado</label>
+          <input id="co-cidade" type="text" autocomplete="address-level2" required placeholder="Ex.: Porto Alegre, RS">
+          <small>Pra ele calcular o frete. Endereço completo tu passa no chat.</small>
+          <span class="field__err">Falta a cidade.</span>
+        </div>
+        <div class="field">
+          <label for="co-obs">Observação</label>
+          <input id="co-obs" type="text" placeholder="Opcional. Ex.: é presente, retirar em mãos, etc.">
+        </div>
+      </div>
+
+      <div class="checkout__total">
+        <span>Total estimado</span>
+        <strong data-co-total>R$ 100</strong>
+      </div>
+      <p class="small muted">Sem pagamento aqui. O pedido vai pro WhatsApp do Maronez, e ele confirma valor, frete e prazo por lá.</p>
+      <button class="btn btn--wide" type="submit">Finalizar no WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+    </form>
+  </dialog>
 
   <footer class="footer">
     <div class="wrap">
