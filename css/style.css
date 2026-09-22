@@ -713,3 +713,14 @@ a.tag:hover { background: var(--red-hot); color: var(--skin); box-shadow: none; 
 
 .agenda__next td:first-child { color: var(--red-hot); }
 .agenda__next td { border-bottom-color: var(--line-strong); }
+
+/* ---------- Orçamento: imagem de referência ---------- */
+.upload { display: grid; gap: 12px; }
+.upload__input { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.upload__btn { justify-self: start; cursor: pointer; }
+.upload__input:focus-visible + .upload__btn { outline: 2px solid var(--skin); outline-offset: 4px; }
+.upload__preview { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 10px; background: var(--ink-2); border: 1px solid var(--line-strong); }
+.upload__preview img { width: 72px; height: 72px; object-fit: cover; }
+.upload__name { font-size: 0.9rem; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload__remove { width: 44px; height: 44px; display: grid; place-items: center; color: var(--skin); }
+.upload__remove svg { width: 18px; height: 18px; }

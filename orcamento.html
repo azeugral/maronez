@@ -115,12 +115,29 @@
             <input id="ref" name="ref" type="text" placeholder="Opcional. Preenche sozinho se tu vier do portfólio">
           </div>
 
+          <div class="field">
+            <label for="refimg">Imagem de referência</label>
+            <div class="upload" data-upload>
+              <input id="refimg" name="refimg" type="file" accept="image/*" class="upload__input">
+              <label for="refimg" class="btn btn--ghost upload__btn">Escolher imagem</label>
+              <div class="upload__preview" hidden>
+                <img alt="" width="72" height="72">
+                <span class="upload__name"></span>
+                <button type="button" class="upload__remove" aria-label="Remover imagem">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+              </div>
+            </div>
+            <small>Opcional. Foto da região, tattoo antiga pra cobrir ou uma referência de vibe. Vai junto com a mensagem no celular; no computador, anexa no chat que abrir.</small>
+          </div>
+
           <div class="form__foot">
             <button class="btn btn--wide" type="submit">Mandar no WhatsApp
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
             </button>
             <span class="small muted">Abre o WhatsApp com a mensagem montada. Tu ainda pode editar antes de enviar.</span>
           </div>
+          <p class="small accent" data-hint hidden></p>
         </form>
 
         <aside class="reveal" data-delay="1">

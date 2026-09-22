@@ -213,6 +213,25 @@
   /* ---------- Orçamento: monta a mensagem e abre o WhatsApp ---------- */
   const form = document.querySelector("#form-orcamento");
   if (form) {
+    // Imagem de referência: preview e remoção
+    const up = form.querySelector("[data-upload]");
+    const upInput = up?.querySelector(".upload__input");
+    const upPrev = up?.querySelector(".upload__preview");
+    let refFile = null;
+    if (upInput) {
+      upInput.addEventListener("change", () => {
+        refFile = upInput.files[0] || null;
+        if (!refFile) return;
+        upPrev.querySelector("img").src = URL.createObjectURL(refFile);
+        upPrev.querySelector(".upload__name").textContent = refFile.name;
+        upPrev.hidden = false;
+        up.querySelector(".upload__btn").textContent = "Trocar imagem";
+      });
+      upPrev.querySelector(".upload__remove").addEventListener("click", () => {
+        refFile = null; upInput.value = ""; upPrev.hidden = true;
+        up.querySelector(".upload__btn").textContent = "Escolher imagem";
+      });
+    }
     const ref = new URLSearchParams(location.search).get("ref");
     if (ref) {
       const refField = form.querySelector("#ref");
@@ -242,12 +261,23 @@
         `Nome: ${v("nome")}`,
       ].filter(Boolean).join("\n");
 
+      const hint = form.querySelector("[data-hint]");
       const url = waHref(msg);
-      if (!CONFIG.whatsappNumber && navigator.clipboard) {
-        // Sem número configurado: copia a mensagem para colar no chat.
-        navigator.clipboard.writeText(msg).catch(() => {});
-        const note = form.querySelector("[data-copied]");
-        if (note) note.hidden = false;
+
+      // Com imagem no celular: compartilha arquivo + texto direto pro WhatsApp (Web Share API).
+      if (refFile && navigator.canShare && navigator.canShare({ files: [refFile] })) {
+        navigator.clipboard?.writeText(msg).catch(() => {});
+        navigator.share({ files: [refFile], text: msg, title: "Orçamento Maronez" }).then(() => {
+          if (hint) { hint.textContent = "Se o texto não foi junto com a imagem, ele está copiado: cola no chat."; hint.hidden = false; }
+        }).catch((err) => {
+          if (err && err.name === "AbortError") return;
+          window.open(url, "_blank", "noopener");
+        });
+        return;
+      }
+      if (refFile && hint) {
+        hint.textContent = "O link não leva a imagem. Anexa ela no chat que abriu.";
+        hint.hidden = false;
       }
       window.open(url, "_blank", "noopener");
     });
