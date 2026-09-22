@@ -710,3 +710,6 @@ a.tag:hover { background: var(--red-hot); color: var(--skin); box-shadow: none; 
 .guest__grid .city--cta .btn { justify-self: start; margin-top: 8px; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--skin) 50%, transparent); }
 .guest__grid .city--cta .btn:hover { color: var(--red-deep); }
 @media (max-width: 900px) { .guest__grid { grid-template-columns: minmax(0, 1fr); } }
+
+.agenda__next td:first-child { color: var(--red-hot); }
+.agenda__next td { border-bottom-color: var(--line-strong); }
