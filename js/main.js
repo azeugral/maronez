@@ -219,18 +219,23 @@
     const upPrev = up?.querySelector(".upload__preview");
     let refFile = null;
     if (upInput) {
-      upInput.addEventListener("change", () => {
-        refFile = upInput.files[0] || null;
-        if (!refFile) return;
-        upPrev.querySelector("img").src = URL.createObjectURL(refFile);
-        upPrev.querySelector(".upload__name").textContent = refFile.name;
+      const zone = up.querySelector(".upload__zone");
+      const setFile = (file) => {
+        if (!file || !file.type.startsWith("image/")) return;
+        refFile = file;
+        upPrev.querySelector("img").src = URL.createObjectURL(file);
+        upPrev.querySelector(".upload__name").textContent = file.name;
         upPrev.hidden = false;
-        up.querySelector(".upload__btn").textContent = "Trocar imagem";
-      });
+        zone.hidden = true;
+      };
+      upInput.addEventListener("change", () => setFile(upInput.files[0]));
       upPrev.querySelector(".upload__remove").addEventListener("click", () => {
-        refFile = null; upInput.value = ""; upPrev.hidden = true;
-        up.querySelector(".upload__btn").textContent = "Escolher imagem";
+        refFile = null; upInput.value = ""; upPrev.hidden = true; zone.hidden = false;
       });
+      // arrastar e soltar no desktop
+      ["dragenter", "dragover"].forEach((ev) => zone.addEventListener(ev, (e) => { e.preventDefault(); up.classList.add("is-drag"); }));
+      ["dragleave", "drop"].forEach((ev) => zone.addEventListener(ev, (e) => { e.preventDefault(); up.classList.remove("is-drag"); }));
+      zone.addEventListener("drop", (e) => setFile(e.dataTransfer.files[0]));
     }
     const ref = new URLSearchParams(location.search).get("ref");
     if (ref) {

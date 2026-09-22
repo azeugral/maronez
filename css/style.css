@@ -717,8 +717,13 @@ a.tag:hover { background: var(--red-hot); color: var(--skin); box-shadow: none; 
 /* ---------- Orçamento: imagem de referência ---------- */
 .upload { display: grid; gap: 12px; }
 .upload__input { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
-.upload__btn { justify-self: start; cursor: pointer; }
-.upload__input:focus-visible + .upload__btn { outline: 2px solid var(--skin); outline-offset: 4px; }
+.upload__zone { display: grid; justify-items: center; gap: 6px; padding: 28px 20px; text-align: center; border: 1px dashed var(--line-strong); background: var(--ink-2); cursor: pointer; transition: border-color 0.3s, background 0.3s; }
+.upload__zone:hover, .upload.is-drag .upload__zone { border-color: var(--skin); background: var(--ink-3); }
+.upload__zone svg { width: 36px; height: 36px; color: var(--red-hot); margin-bottom: 4px; }
+.upload__zone strong { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.08em; color: var(--skin); font-size: 0.95rem; }
+.upload__zone span { color: var(--muted); font-size: 0.9rem; }
+.upload__input:focus-visible + .upload__zone { outline: 2px solid var(--skin); outline-offset: 4px; }
+.upload__preview[hidden], .upload__zone[hidden] { display: none; }
 .upload__preview { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 10px; background: var(--ink-2); border: 1px solid var(--line-strong); }
 .upload__preview img { width: 72px; height: 72px; object-fit: cover; }
 .upload__name { font-size: 0.9rem; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
