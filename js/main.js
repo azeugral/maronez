@@ -5,8 +5,7 @@
   /* ---------- Config: tudo que o cliente pode trocar fica aqui ---------- */
   const CONFIG = {
     // Número com DDI: abre o WhatsApp com a mensagem pronta.
-    // window.MARONEZ_WA (definido antes deste script) sobrescreve, usado pelas páginas de teste.
-    whatsappNumber: window.MARONEZ_WA || "555191248594",
+    whatsappNumber: "555191248594",
     whatsappMessageLink: "https://wa.me/message/BCC4OXL3C5G3M1",
     instagram: "https://www.instagram.com/maronezzzz/",
     tiktok: "https://www.tiktok.com/@maronezzz",

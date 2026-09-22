@@ -758,6 +758,3 @@ a.tag:hover { background: var(--red-hot); color: var(--skin); box-shadow: none; 
   .checkout__item .qty { grid-column: 1 / -1; justify-self: start; }
 }
 
-/* ---------- Barra das páginas de teste ---------- */
-.teste-bar { position: relative; z-index: 95; padding: 10px 16px; background: var(--red); color: var(--skin); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; text-align: center; }
-.teste-bar a { text-decoration: underline; }
