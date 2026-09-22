@@ -202,6 +202,9 @@
         item = { name: btn.dataset.name, price: Number(btn.dataset.price) || 0, qty: 1 };
         co.querySelector("[data-co-name]").textContent = item.name;
         const img = co.querySelector("[data-co-img]"); img.src = btn.dataset.img; img.alt = item.name;
+        const [artLabel, artHint] = (btn.dataset.art || "Arte|O que tu quer na arte?").split("|");
+        co.querySelector("[data-co-art-label]").textContent = artLabel;
+        co.querySelector("[data-co-art]").placeholder = artHint;
         form.reset(); form.querySelectorAll(".is-invalid").forEach((f) => f.classList.remove("is-invalid"));
         render(); co.showModal();
       });
@@ -224,8 +227,8 @@
         `${item.qty}x ${item.name}` + (item.price ? ` (${money(item.price)} cada, total ${money(item.price * item.qty)})` : ""),
         `Nome: ${v("co-nome")}`,
         `Cidade: ${v("co-cidade")}`,
-        v("co-obs") && `Obs: ${v("co-obs")}`,
-        "Me passa o valor do frete e a forma de pagamento?",
+        `Arte: ${v("co-arte")}`,
+        item.price ? "Me passa o valor do frete e a forma de pagamento?" : "Me passa o valor, o frete e a forma de pagamento?",
       ].filter(Boolean).join("\n");
       window.open(waHref(msg), "_blank", "noopener");
       co.close();

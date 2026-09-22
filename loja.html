@@ -92,9 +92,9 @@
             <div class="ph ph--real">
               <img src="assets/img/loja/bandeira.jpg" srcset="assets/img/loja/bandeira-800.jpg 800w, assets/img/loja/bandeira.jpg 1200w" sizes="(max-width: 700px) 100vw, 33vw" alt="Bandeira vermelha Nask com a frase 'Sou apenas uma criança que sobreviveu'" width="1200" height="800" loading="lazy">
             </div>
-            <div class="product__row"><h2 class="product__name">Bandeira Nask</h2><span class="product__price">R$ 100</span></div>
-            <p>"Sou apenas uma criança que sobreviveu." Vermelha, com ilhós, feita sob encomenda.</p>
-            <button class="btn" type="button" data-order data-name="Bandeira Nask" data-price="100" data-img="assets/img/loja/bandeira-800.jpg">Encomendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <div class="product__row"><h2 class="product__name">Bandeira Nask</h2><span class="product__price product__price--soon">Valor no WhatsApp</span></div>
+            <p>Vermelha, com ilhós, feita sob encomenda com a arte que tu escolher.</p>
+            <button class="btn" type="button" data-order data-name="Bandeira Nask" data-price="" data-img="assets/img/loja/bandeira-800.jpg" data-art="Arte da bandeira|Qual arte tu quer? Uma das do Maronez ou uma ideia tua. Descreve aqui.">Encomendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             <span class="product__ext">Pagamento e entrega pelo WhatsApp</span>
           </article>
 
@@ -104,8 +104,8 @@
             </div>
             <div class="product__row"><h2 class="product__name">Bottom Seja Nask</h2><span class="product__price product__price--soon">Valor no WhatsApp</span></div>
             <p>O rosto do logo em bottom pra jaqueta, mochila ou boné.</p>
-            <!-- CONFIRMAR: preço do bottom (data-price) -->
-            <button class="btn" type="button" data-order data-name="Bottom Seja Nask" data-price="" data-img="assets/img/loja/bottom-800.jpg">Encomendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <!-- CONFIRMAR: preços de bandeira e bottom (data-price nos botões) -->
+            <button class="btn" type="button" data-order data-name="Bottom Seja Nask" data-price="" data-img="assets/img/loja/bottom-800.jpg" data-art="Arte do bottom|Qual arte tu quer no bottom? O rosto do logo ou outra ideia.">Encomendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             <span class="product__ext">Pagamento e entrega pelo WhatsApp</span>
           </article>
 
@@ -162,14 +162,15 @@
           <span class="field__err">Falta a cidade.</span>
         </div>
         <div class="field">
-          <label for="co-obs">Observação</label>
-          <input id="co-obs" type="text" placeholder="Opcional. Ex.: é presente, retirar em mãos, etc.">
+          <label for="co-arte" data-co-art-label>Arte da bandeira</label>
+          <textarea id="co-arte" required placeholder="Qual arte tu quer?" data-co-art></textarea>
+          <span class="field__err">Conta qual arte tu quer.</span>
         </div>
       </div>
 
       <div class="checkout__total">
         <span>Total estimado</span>
-        <strong data-co-total>R$ 100</strong>
+        <strong data-co-total>a confirmar</strong>
       </div>
       <p class="small muted">Sem pagamento aqui. O pedido vai pro WhatsApp do Maronez, e ele confirma valor, frete e prazo por lá.</p>
       <button class="btn btn--wide" type="submit">Finalizar no WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></button>

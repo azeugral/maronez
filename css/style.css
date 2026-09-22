@@ -747,6 +747,7 @@ a.tag:hover { background: var(--red-hot); color: var(--skin); box-shadow: none; 
 .qty button:hover { background: var(--ink-3); }
 .qty output { text-align: center; font-family: var(--font-mono); font-size: 1rem; }
 .checkout__fields { display: grid; gap: 18px; }
+.checkout__fields textarea { min-height: 96px; }
 .checkout__total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 18px; border-top: 1px solid var(--line); }
 .checkout__total span { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .checkout__total strong { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--skin); }
