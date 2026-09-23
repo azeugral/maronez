@@ -1,0 +1,114 @@
+{
+ "braco-fechado": {
+  "title": "Braço fechado",
+  "alt": "Braço inteiro fechado em freehand preto com chamas vermelhas",
+  "region": "Braço inteiro",
+  "w": 1400,
+  "h": 1867
+ },
+ "costas-fechadas": {
+  "title": "Costas fechadas",
+  "alt": "Costas inteiras fechadas em freehand preto e vermelho",
+  "region": "Costas",
+  "w": 1400,
+  "h": 1867
+ },
+ "sleeve-densa": {
+  "title": "Sleeve fechada",
+  "alt": "Braço fechado com traço freehand denso, do ombro ao pulso",
+  "region": "Braço inteiro",
+  "w": 1400,
+  "h": 1867
+ },
+ "gato": {
+  "title": "Gato",
+  "alt": "Gato em traço ignorant com lua vermelha na panturrilha",
+  "region": "Panturrilha",
+  "w": 1400,
+  "h": 1867
+ },
+ "rosto-pescoco": {
+  "title": "Rosto e pescoço",
+  "alt": "Rosto e pescoço tatuados em freehand",
+  "region": "Rosto e pescoço",
+  "w": 1400,
+  "h": 1867
+ },
+ "antebraco-tribal": {
+  "title": "Antebraço",
+  "alt": "Antebraço fechado em freehand preto",
+  "region": "Antebraço",
+  "w": 1400,
+  "h": 1867
+ },
+ "costas-sessao": {
+  "title": "Costas em sessão",
+  "alt": "Peça de costas em andamento, com contorno vermelho fresco",
+  "region": "Costas",
+  "w": 1400,
+  "h": 1867
+ },
+ "chamas-frescas": {
+  "title": "Chamas",
+  "alt": "Antebraço recém tatuado com chamas em vermelho",
+  "region": "Antebraço",
+  "w": 1400,
+  "h": 1867
+ },
+ "sleeve-rua": {
+  "title": "Sleeve",
+  "alt": "Braço fechado em freehand, na rua",
+  "region": "Braço inteiro",
+  "w": 1400,
+  "h": 1867
+ },
+ "braco-aberto": {
+  "title": "Braço",
+  "alt": "Braço fechado em freehand preto, de pé",
+  "region": "Braço inteiro",
+  "w": 1400,
+  "h": 1867
+ },
+ "ceifador": {
+  "title": "Ceifador",
+  "alt": "Ceifador em preto e vermelho no antebraço",
+  "region": "Antebraço",
+  "w": 1400,
+  "h": 1867
+ },
+ "perna-odio": {
+  "title": "Perna",
+  "alt": "Perna em freehand preto",
+  "region": "Perna",
+  "w": 1400,
+  "h": 1867
+ },
+ "status-dead": {
+  "title": "Status dead",
+  "alt": "Lettering no peito com risco vermelho",
+  "region": "Peito",
+  "w": 1400,
+  "h": 1867
+ },
+ "mao": {
+  "title": "Mão",
+  "alt": "Mão fechada em freehand preto",
+  "region": "Mão",
+  "w": 1400,
+  "h": 1867
+ },
+ "pin-up": {
+  "title": "Pin-up",
+  "alt": "Pin-up em vermelho na perna, recém feita",
+  "region": "Perna",
+  "w": 1400,
+  "h": 1867
+ },
+ "costela": {
+  "title": "Costela",
+  "alt": "Silhuetas em preto na costela",
+  "region": "Costela",
+  "w": 1400,
+  "h": 1867
+ }
+}
