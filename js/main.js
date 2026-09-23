@@ -129,6 +129,7 @@
         img.alt = src.alt;
         title.textContent = w.dataset.title || "";
         style.textContent = w.dataset.style || "";
+        style.previousElementSibling.hidden = style.hidden = !w.dataset.style;
         region.textContent = w.dataset.region || "";
         state.textContent = w.dataset.state || "";
         quote.href = `orcamento.html?ref=${encodeURIComponent(w.dataset.title || "")}`;

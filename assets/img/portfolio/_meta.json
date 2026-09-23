@@ -27,15 +27,6 @@
   "src": "626559395_18108619669669829_2890302139022666760_n.jpg"
  },
  {
-  "slug": "oogie-boogie",
-  "title": "Oogie Boogie",
-  "cats": "ignorant",
-  "region": "Antebraço",
-  "w": 632,
-  "h": 632,
-  "src": "628402270_18304008631274317_2789709049115429413_n.jpg"
- },
- {
   "slug": "lettering-gotico",
   "title": "Lettering gótico",
   "cats": "ignorant",
@@ -97,33 +88,6 @@
   "w": 1440,
   "h": 1440,
   "src": "651546174_18039816635778028_4713801256036183722_n.jpg"
- },
- {
-  "slug": "pincelada",
-  "title": "Pincelada",
-  "cats": "freehand",
-  "region": "Braço",
-  "w": 1440,
-  "h": 1638,
-  "src": "651701849_17938515567017178_3609648941373895970_n.jpg"
- },
- {
-  "slug": "sigilo-vermelho",
-  "title": "Sigilo vermelho",
-  "cats": "freehand",
-  "region": "Antebraço",
-  "w": 1440,
-  "h": 1800,
-  "src": "652839070_18075039368628560_3577966670320396244_n.jpg"
- },
- {
-  "slug": "cabeca-ombro",
-  "title": "Cabeça e ombro",
-  "cats": "freehand",
-  "region": "Cabeça",
-  "w": 1440,
-  "h": 1800,
-  "src": "653055902_18082386491199321_7402250336171180237_n.jpg"
  },
  {
   "slug": "morcego",
@@ -227,7 +191,7 @@
  {
   "slug": "coracao-vermelho",
   "title": "Coração",
-  "cats": "freehand",
+  "cats": "",
   "region": "Coxa",
   "w": 1440,
   "h": 1615,
@@ -250,15 +214,6 @@
   "w": 1440,
   "h": 1800,
   "src": "655753663_18067108301658539_7610386966177654314_n.jpg"
- },
- {
-  "slug": "gengar",
-  "title": "Gengar",
-  "cats": "ignorant",
-  "region": "Braço",
-  "w": 1440,
-  "h": 1440,
-  "src": "655765377_18097062118981895_6359287883552338524_n.jpg"
  },
  {
   "slug": "arame",
@@ -304,15 +259,6 @@
   "w": 1440,
   "h": 1800,
   "src": "657350013_18314103694257783_4160884979173232871_n.jpg"
- },
- {
-  "slug": "sorriso-mao",
-  "title": "Sorriso na mão",
-  "cats": "ignorant",
-  "region": "Mão",
-  "w": 1440,
-  "h": 1439,
-  "src": "657560012_18329282581247178_7515633349407217281_n.jpg"
  },
  {
   "slug": "arte",
