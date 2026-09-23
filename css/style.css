@@ -759,21 +759,10 @@ a.tag:hover { background: var(--red-hot); color: var(--skin); box-shadow: none; 
 }
 
 
-/* ---------- Freehand: destaque e grade vertical ---------- */
-.destaque { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(16px, 2.5vw, 40px); align-items: start; }
-.destaque figure { margin: 0; position: relative; overflow: hidden; background: var(--ink-3); }
-.destaque img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--ease-out); }
-.destaque figure:hover img { transform: scale(1.03); }
-.destaque__a img { aspect-ratio: 4 / 5; }
-.destaque figure.destaque__b { margin-top: clamp(40px, 8vw, 120px); }
-.destaque__b img { aspect-ratio: 3 / 4; }
-.destaque figcaption { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-top: 12px; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; color: var(--skin); }
-.destaque figcaption span { font-family: var(--font-mono); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+/* ---------- Freehand: grade vertical ---------- */
 .works--fh { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .works--fh .work { grid-column: auto !important; grid-row: auto !important; }
 .works--fh .work .ph { aspect-ratio: 4 / 5 !important; }
 @media (max-width: 900px) {
-  .destaque { grid-template-columns: minmax(0, 1fr); }
-  .destaque figure.destaque__b { margin-top: 0; }
   .works--fh { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
