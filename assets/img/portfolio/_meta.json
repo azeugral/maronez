@@ -326,7 +326,7 @@
  {
   "slug": "rosto-pescoco",
   "title": "Rosto e pescoço",
-  "cats": "freehand curada",
+  "cats": "ignorant",
   "region": "Rosto",
   "w": 1400,
   "h": 1867,
@@ -344,7 +344,7 @@
  {
   "slug": "antebraco-espinhos",
   "title": "Espinhos no antebraço",
-  "cats": "freehand",
+  "cats": "freehand curada",
   "region": "Antebraço",
   "w": 1000,
   "h": 1250,
@@ -439,5 +439,140 @@
   "w": 1000,
   "h": 1250,
   "src": "copy_F83059BF-22AC-4181-AF1A-67C51062544F.jpeg"
+ },
+ {
+  "slug": "chamas-perna",
+  "title": "Chamas",
+  "cats": "freehand",
+  "region": "Perna",
+  "w": 1000,
+  "h": 1250,
+  "src": "Free(1).HEIC"
+ },
+ {
+  "slug": "braco-chamas",
+  "title": "Braço fechado",
+  "cats": "freehand",
+  "region": "Braço inteiro",
+  "w": 1000,
+  "h": 1250,
+  "src": "Free(2).HEIC"
+ },
+ {
+  "slug": "antebraco-fechado",
+  "title": "Antebraço fechado",
+  "cats": "freehand",
+  "region": "Antebraço",
+  "w": 1000,
+  "h": 1250,
+  "src": "Free(3).HEIC"
+ },
+ {
+  "slug": "sleeve-preta",
+  "title": "Sleeve",
+  "cats": "freehand",
+  "region": "Braço inteiro",
+  "w": 1000,
+  "h": 1250,
+  "src": "Free.HEIC"
+ },
+ {
+  "slug": "braco-tribal",
+  "title": "Braço",
+  "cats": "freehand",
+  "region": "Braço inteiro",
+  "w": 1000,
+  "h": 1250,
+  "src": "Free.jpeg"
+ },
+ {
+  "slug": "mao-fechada",
+  "title": "Mão fechada",
+  "cats": "ignorant freehand",
+  "region": "Mão",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign + free.HEIC"
+ },
+ {
+  "slug": "personagem-canela",
+  "title": "Personagem",
+  "cats": "ignorant",
+  "region": "Canela",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign(2).HEIC"
+ },
+ {
+  "slug": "eu-vc",
+  "title": "Eu e vc",
+  "cats": "ignorant",
+  "region": "Costela",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign(3).HEIC"
+ },
+ {
+  "slug": "personagens-canela",
+  "title": "Personagens",
+  "cats": "ignorant",
+  "region": "Canela",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign(4).HEIC"
+ },
+ {
+  "slug": "nos-por-nos",
+  "title": "Nós por nós",
+  "cats": "ignorant",
+  "region": "Antebraço",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign(5).HEIC"
+ },
+ {
+  "slug": "braco-rua",
+  "title": "Braço na rua",
+  "cats": "ignorant",
+  "region": "Braço inteiro",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign(6).HEIC"
+ },
+ {
+  "slug": "gato-lua",
+  "title": "Gato",
+  "cats": "ignorant",
+  "region": "Panturrilha",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign(7).HEIC"
+ },
+ {
+  "slug": "pin-up-braco",
+  "title": "Pin-up",
+  "cats": "ignorant",
+  "region": "Antebraço",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign(8).HEIC"
+ },
+ {
+  "slug": "perna-tribal",
+  "title": "Perna",
+  "cats": "ignorant",
+  "region": "Perna",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign.HEIC"
+ },
+ {
+  "slug": "status-peito",
+  "title": "Status dead",
+  "cats": "ignorant",
+  "region": "Peito",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ign.JPG"
  }
 ]

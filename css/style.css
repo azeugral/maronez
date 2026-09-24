@@ -761,3 +761,10 @@ a.tag:hover { background: var(--red-hot); color: var(--skin); box-shadow: none; 
 @media (max-width: 900px) {
   .works--fh { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ---------- Portfólio: destaque largo ---------- */
+.destaque-larga { margin: 0; }
+.destaque-larga img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.destaque-larga figcaption { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-top: 12px; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; color: var(--skin); }
+.destaque-larga figcaption span { font-family: var(--font-mono); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+@media (min-width: 760px) { .destaque-larga img { aspect-ratio: 16 / 9; } }
