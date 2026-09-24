@@ -128,7 +128,7 @@
  {
   "slug": "kuromi-coxa",
   "title": "Kuromi na coxa",
-  "cats": "ignorant curada",
+  "cats": "ignorant",
   "region": "Coxa",
   "w": 1440,
   "h": 1568,
@@ -200,7 +200,7 @@
  {
   "slug": "yin-yang",
   "title": "Yin yang",
-  "cats": "freehand curada",
+  "cats": "freehand",
   "region": "Ombro",
   "w": 1440,
   "h": 1800,
@@ -236,7 +236,7 @@
  {
   "slug": "kuromi-joelho",
   "title": "Kuromi",
-  "cats": "ignorant curada",
+  "cats": "ignorant",
   "region": "Joelho",
   "w": 1440,
   "h": 1800,
@@ -281,7 +281,7 @@
  {
   "slug": "maos",
   "title": "Mãos",
-  "cats": "freehand curada",
+  "cats": "freehand",
   "region": "Mãos",
   "w": 4284,
   "h": 5712,
@@ -290,7 +290,7 @@
  {
   "slug": "ombro-fechado",
   "title": "Ombro fechado",
-  "cats": "freehand curada",
+  "cats": "freehand",
   "region": "Ombro",
   "w": 4284,
   "h": 5712,
@@ -317,7 +317,7 @@
  {
   "slug": "costas",
   "title": "Costas",
-  "cats": "ignorant curada",
+  "cats": "ignorant",
   "region": "Costas",
   "w": 3024,
   "h": 4032,
@@ -353,7 +353,7 @@
  {
   "slug": "peito-ombro",
   "title": "Peito e ombro",
-  "cats": "freehand curada",
+  "cats": "freehand",
   "region": "Peito e ombro",
   "w": 1000,
   "h": 1250,
@@ -398,7 +398,7 @@
  {
   "slug": "nask-antebraco",
   "title": "Nask",
-  "cats": "ignorant curada",
+  "cats": "ignorant",
   "region": "Antebraço",
   "w": 1000,
   "h": 1250,
