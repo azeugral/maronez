@@ -11,11 +11,10 @@
     tiktok: "https://www.tiktok.com/@maronezzz",
     youtube: "https://www.youtube.com/@maronezzzz",
     playlist: "63ik4dkmrl8umtK1OLSJS7",
-    // CONFIRMAR: para a foto de referência ir junto com o orçamento, criar um preset
-    // de upload "unsigned" no Cloudinary (gratuito) e preencher os dois campos abaixo.
-    // Vazio = a foto continua sendo copiada para a pessoa colar no chat.
-    cloudinaryCloud: "",
-    cloudinaryPreset: "",
+    // Upload da foto de referência do orçamento (preset unsigned do Cloudinary).
+    // Vazio = a foto volta a ser copiada para a pessoa colar no chat.
+    cloudinaryCloud: "waj86oks",
+    cloudinaryPreset: "orcamento-maronez",
     // Vídeo do Kick Buttowski na TV (confirmado: 1h de episódios dublados).
     kickVideoId: "-5EEwggolgM",
   };
