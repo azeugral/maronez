@@ -457,5 +457,50 @@
   "w": 1000,
   "h": 1250,
   "src": "Ign.JPG"
+ },
+ {
+  "slug": "peito-fechado",
+  "title": "Peito fechado",
+  "cats": "freehand",
+  "region": "Peito",
+  "w": 1000,
+  "h": 1250,
+  "src": "Freehand(1).PNG"
+ },
+ {
+  "slug": "quadril",
+  "title": "Quadril",
+  "cats": "freehand",
+  "region": "Quadril",
+  "w": 1000,
+  "h": 1250,
+  "src": "Freehand.PNG"
+ },
+ {
+  "slug": "antebraco-cyber",
+  "title": "Antebraço cyber",
+  "cats": "freehand",
+  "region": "Antebraço",
+  "w": 1000,
+  "h": 1250,
+  "src": "IMG_5364.PNG"
+ },
+ {
+  "slug": "escorpiao",
+  "title": "Escorpião",
+  "cats": "freehand",
+  "region": "Antebraço",
+  "w": 1000,
+  "h": 1250,
+  "src": "IMG_5365.PNG"
+ },
+ {
+  "slug": "figura-antebraco",
+  "title": "Figura",
+  "cats": "ignorant",
+  "region": "Antebraço",
+  "w": 1000,
+  "h": 1250,
+  "src": "Ignorant.PNG"
  }
 ]
