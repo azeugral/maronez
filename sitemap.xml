@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://azeugral.github.io/maronez/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://azeugral.github.io/maronez/portfolio.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://azeugral.github.io/maronez/freehand.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://azeugral.github.io/maronez/loja.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://azeugral.github.io/maronez/sala.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://azeugral.github.io/maronez/orcamento.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://azeugral.github.io/maronez/cuidados.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maronez.com.br/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://maronez.com.br/portfolio.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maronez.com.br/freehand.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maronez.com.br/loja.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maronez.com.br/sala.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maronez.com.br/orcamento.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maronez.com.br/cuidados.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
