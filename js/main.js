@@ -260,6 +260,24 @@
     });
   });
 
+  /* ---------- Copia a imagem escolhida para a área de transferência ---------- */
+  const copiaImagem = async (file) => {
+    try {
+      if (!navigator.clipboard || !window.ClipboardItem) return false;
+      const bitmap = await createImageBitmap(file);
+      const max = 1600;
+      const escala = Math.min(1, max / Math.max(bitmap.width, bitmap.height));
+      const cv = document.createElement("canvas");
+      cv.width = Math.round(bitmap.width * escala);
+      cv.height = Math.round(bitmap.height * escala);
+      cv.getContext("2d").drawImage(bitmap, 0, 0, cv.width, cv.height);
+      const blob = await new Promise((r) => cv.toBlob(r, "image/png"));
+      if (!blob) return false;
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+      return true;
+    } catch (e) { return false; }
+  };
+
   /* ---------- Orçamento: monta a mensagem e abre o WhatsApp ---------- */
   const form = document.querySelector("#form-orcamento");
   if (form) {
@@ -317,24 +335,17 @@
       ].filter(Boolean).join("\n");
 
       const hint = form.querySelector("[data-hint]");
-      const url = waHref(msg);
 
-      // Com imagem no celular: compartilha arquivo + texto direto pro WhatsApp (Web Share API).
-      if (refFile && navigator.canShare && navigator.canShare({ files: [refFile] })) {
-        navigator.clipboard?.writeText(msg).catch(() => {});
-        navigator.share({ files: [refFile], text: msg, title: "Orçamento Maronez" }).then(() => {
-          if (hint) { hint.textContent = "Se o texto não foi junto com a imagem, ele está copiado: cola no chat."; hint.hidden = false; }
-        }).catch((err) => {
-          if (err && err.name === "AbortError") return;
-          window.open(url, "_blank", "noopener");
-        });
-        return;
-      }
+      // Sempre abre a conversa direta com o Maronez. Link do WhatsApp não carrega imagem,
+      // então a foto vai copiada para a área de transferência e a pessoa cola no chat.
+      window.open(waHref(msg), "_blank", "noopener");
       if (refFile && hint) {
-        hint.textContent = "O link não leva a imagem. Anexa ela no chat que abriu.";
+        hint.textContent = "Conversa aberta. Agora anexa a foto no clipe do WhatsApp.";
         hint.hidden = false;
+        copiaImagem(refFile).then((ok) => {
+          if (ok) hint.textContent = "Conversa aberta. A foto está copiada: cola no chat, ou anexa pelo clipe.";
+        });
       }
-      window.open(url, "_blank", "noopener");
     });
   }
 })();
