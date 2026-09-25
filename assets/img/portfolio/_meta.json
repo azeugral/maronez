@@ -155,7 +155,7 @@
  {
   "slug": "chaos-peito",
   "title": "Chaos",
-  "cats": "freehand",
+  "cats": "ignorant",
   "region": "Peito",
   "w": 1440,
   "h": 1800,
@@ -263,7 +263,7 @@
  {
   "slug": "arte",
   "title": "Arte",
-  "cats": "freehand",
+  "cats": "ignorant",
   "region": "Peito",
   "w": 1440,
   "h": 1713,
