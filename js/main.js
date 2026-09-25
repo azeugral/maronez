@@ -278,8 +278,9 @@
       cv.height = Math.round(bitmap.height * escala);
       cv.getContext("2d").drawImage(bitmap, 0, 0, cv.width, cv.height);
       const blob = await new Promise((r) => cv.toBlob(r, "image/jpeg", 0.85));
+      const carimbo = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
       const dados = new FormData();
-      dados.append("file", blob);
+      dados.append("file", blob, `orcamento-${carimbo}.jpg`);
       dados.append("upload_preset", CONFIG.cloudinaryPreset);
       const resp = await fetch(`https://api.cloudinary.com/v1_1/${CONFIG.cloudinaryCloud}/image/upload`, { method: "POST", body: dados });
       if (!resp.ok) return "";
@@ -318,6 +319,7 @@
       const zone = up.querySelector(".upload__zone");
       const setFile = (file) => {
         if (!file || !file.type.startsWith("image/")) return;
+        if (file.size > 20 * 1024 * 1024) { alert("Essa imagem é muito grande. Manda uma até 20 MB."); return; }
         refFile = file;
         upPrev.querySelector("img").src = URL.createObjectURL(file);
         upPrev.querySelector(".upload__name").textContent = file.name;
