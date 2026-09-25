@@ -30,5 +30,18 @@ Abrir http://localhost:8765. O embed do YouTube não funciona abrindo o HTML dir
 
 ## Antes de publicar
 
+### Foto de referência junto com o orçamento
+
+O link do WhatsApp só carrega texto. Para a foto ir dentro da mensagem, crie um preset
+de upload *unsigned* no Cloudinary (plano gratuito) e preencha em `js/main.js`:
+
+```js
+cloudinaryCloud: "seu-cloud-name",
+cloudinaryPreset: "nome-do-preset",
+```
+
+No preset, restrinja a `image/*`, defina uma pasta e um tamanho máximo. Com os campos
+vazios o site segue funcionando: abre a conversa e copia a foto para colar no chat.
+
 Buscar `CONFIRMAR` nos arquivos: fonte StreetTech, número do WhatsApp (`js/main.js`), fotos,
 links e preços da loja, endereço e horário, agenda de guest spots, sinal, domínio.

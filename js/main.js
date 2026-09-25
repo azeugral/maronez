@@ -11,6 +11,11 @@
     tiktok: "https://www.tiktok.com/@maronezzz",
     youtube: "https://www.youtube.com/@maronezzzz",
     playlist: "63ik4dkmrl8umtK1OLSJS7",
+    // CONFIRMAR: para a foto de referência ir junto com o orçamento, criar um preset
+    // de upload "unsigned" no Cloudinary (gratuito) e preencher os dois campos abaixo.
+    // Vazio = a foto continua sendo copiada para a pessoa colar no chat.
+    cloudinaryCloud: "",
+    cloudinaryPreset: "",
     // Vídeo do Kick Buttowski na TV (confirmado: 1h de episódios dublados).
     kickVideoId: "-5EEwggolgM",
   };
@@ -260,6 +265,29 @@
     });
   });
 
+  /* ---------- Sobe a foto de referência e devolve o link ---------- */
+  const enviaImagem = async (file) => {
+    if (!CONFIG.cloudinaryCloud || !CONFIG.cloudinaryPreset) return "";
+    try {
+      // reduz antes de subir: foto de celular chega com 4 MB ou mais
+      const bitmap = await createImageBitmap(file);
+      const max = 1600;
+      const escala = Math.min(1, max / Math.max(bitmap.width, bitmap.height));
+      const cv = document.createElement("canvas");
+      cv.width = Math.round(bitmap.width * escala);
+      cv.height = Math.round(bitmap.height * escala);
+      cv.getContext("2d").drawImage(bitmap, 0, 0, cv.width, cv.height);
+      const blob = await new Promise((r) => cv.toBlob(r, "image/jpeg", 0.85));
+      const dados = new FormData();
+      dados.append("file", blob);
+      dados.append("upload_preset", CONFIG.cloudinaryPreset);
+      const resp = await fetch(`https://api.cloudinary.com/v1_1/${CONFIG.cloudinaryCloud}/image/upload`, { method: "POST", body: dados });
+      if (!resp.ok) return "";
+      const json = await resp.json();
+      return json.secure_url || "";
+    } catch (e) { return ""; }
+  };
+
   /* ---------- Copia a imagem escolhida para a área de transferência ---------- */
   const copiaImagem = async (file) => {
     try {
@@ -335,17 +363,33 @@
       ].filter(Boolean).join("\n");
 
       const hint = form.querySelector("[data-hint]");
+      const botao = form.querySelector('button[type="submit"]');
+      const abre = (texto) => window.open(waHref(texto), "_blank", "noopener");
 
-      // Sempre abre a conversa direta com o Maronez. Link do WhatsApp não carrega imagem,
-      // então a foto vai copiada para a área de transferência e a pessoa cola no chat.
-      window.open(waHref(msg), "_blank", "noopener");
-      if (refFile && hint) {
-        hint.textContent = "Conversa aberta. Agora anexa a foto no clipe do WhatsApp.";
-        hint.hidden = false;
-        copiaImagem(refFile).then((ok) => {
-          if (ok) hint.textContent = "Conversa aberta. A foto está copiada: cola no chat, ou anexa pelo clipe.";
-        });
-      }
+      // Sem foto: abre a conversa direta com o texto montado.
+      if (!refFile) { abre(msg); return; }
+
+      // Com foto: sobe a imagem e manda o link dentro da própria mensagem.
+      const rotulo = botao ? botao.innerHTML : "";
+      if (botao) { botao.disabled = true; botao.textContent = "Enviando foto..."; }
+      enviaImagem(refFile).then((link) => {
+        if (botao) { botao.disabled = false; botao.innerHTML = rotulo; }
+        if (link) {
+          abre(msg + `
+Foto de referência: ${link}`);
+          if (hint) { hint.textContent = "Pronto. A foto foi junto com a mensagem."; hint.hidden = false; }
+          return;
+        }
+        // Sem upload configurado ou falha de rede: conversa direta e foto copiada.
+        abre(msg);
+        if (hint) {
+          hint.textContent = "Conversa aberta. Agora anexa a foto no clipe do WhatsApp.";
+          hint.hidden = false;
+          copiaImagem(refFile).then((ok) => {
+            if (ok) hint.textContent = "Conversa aberta. A foto está copiada: cola no chat, ou anexa pelo clipe.";
+          });
+        }
+      });
     });
   }
 })();
