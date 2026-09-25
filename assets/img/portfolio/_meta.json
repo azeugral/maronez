@@ -1,14 +1,5 @@
 [
  {
-  "slug": "coracao-costurado",
-  "title": "Coração costurado",
-  "cats": "ignorant",
-  "region": "Nuca",
-  "w": 1440,
-  "h": 1440,
-  "src": "618878555_17997389306904461_6991132636008409490_n.jpg"
- },
- {
   "slug": "gato-palhaco",
   "title": "Gato palhaço",
   "cats": "ignorant",
@@ -16,33 +7,6 @@
   "w": 1440,
   "h": 1440,
   "src": "621997471_18040591031736007_6828604880134834456_n.jpg"
- },
- {
-  "slug": "sorriso",
-  "title": "Sorriso",
-  "cats": "ignorant",
-  "region": "Panturrilha",
-  "w": 1440,
-  "h": 1440,
-  "src": "626559395_18108619669669829_2890302139022666760_n.jpg"
- },
- {
-  "slug": "lettering-gotico",
-  "title": "Lettering gótico",
-  "cats": "ignorant",
-  "region": "Antebraço",
-  "w": 1440,
-  "h": 1800,
-  "src": "642987131_17955109308083312_3053473182906488512_n.jpg"
- },
- {
-  "slug": "estrela",
-  "title": "Estrela",
-  "cats": "ignorant",
-  "region": "Cotovelo",
-  "w": 1440,
-  "h": 1795,
-  "src": "645979855_17963968536042685_936368843974645863_n.jpg"
  },
  {
   "slug": "passaros",
@@ -54,24 +18,6 @@
   "src": "649885710_17967759102001358_1712325138608966014_n.jpg"
  },
  {
-  "slug": "marca-pescoco",
-  "title": "Marca no pescoço",
-  "cats": "ignorant",
-  "region": "Pescoço",
-  "w": 1440,
-  "h": 1800,
-  "src": "650382144_17997665990872596_3123607436144642022_n.jpg"
- },
- {
-  "slug": "cafeina",
-  "title": "Molécula de cafeína",
-  "cats": "ignorant",
-  "region": "Antebraço",
-  "w": 1440,
-  "h": 1800,
-  "src": "650998973_18026851400799798_9115292353348368032_n.jpg"
- },
- {
   "slug": "sigilo-antebraco",
   "title": "Sigilo no antebraço",
   "cats": "freehand",
@@ -81,24 +27,6 @@
   "src": "651456319_18014558729828368_3462522014721107611_n.jpg"
  },
  {
-  "slug": "gengar-estrelas",
-  "title": "Gengar e estrelas",
-  "cats": "ignorant",
-  "region": "Antebraço",
-  "w": 1440,
-  "h": 1440,
-  "src": "651546174_18039816635778028_4713801256036183722_n.jpg"
- },
- {
-  "slug": "morcego",
-  "title": "Morcego",
-  "cats": "ignorant",
-  "region": "Braço",
-  "w": 1440,
-  "h": 1800,
-  "src": "653638926_18076248062143896_3412503059172795878_n.jpg"
- },
- {
   "slug": "hello-kitty",
   "title": "Hello Kitty em chamas",
   "cats": "ignorant",
@@ -106,15 +34,6 @@
   "w": 1440,
   "h": 1800,
   "src": "654292410_18061955696348513_5623636879904938535_n.jpg"
- },
- {
-  "slug": "moletom",
-  "title": "Moletom",
-  "cats": "ignorant",
-  "region": "Antebraço",
-  "w": 1440,
-  "h": 1800,
-  "src": "654432646_18097702654983702_7947651237175690963_n.jpg"
  },
  {
   "slug": "cordeiros",
@@ -144,15 +63,6 @@
   "src": "654568261_18131576713540967_8498658682564423123_n.jpg"
  },
  {
-  "slug": "kombi",
-  "title": "Kombi",
-  "cats": "ignorant",
-  "region": "Antebraço",
-  "w": 1440,
-  "h": 1440,
-  "src": "654991228_18077877569114550_1007731196891279046_n.jpg"
- },
- {
   "slug": "chaos-peito",
   "title": "Chaos",
   "cats": "ignorant",
@@ -160,15 +70,6 @@
   "w": 1440,
   "h": 1800,
   "src": "655211859_18032946686603781_2186279098229415041_n.jpg"
- },
- {
-  "slug": "doeu-ja-passou",
-  "title": "Doeu, mas já passou",
-  "cats": "ignorant",
-  "region": "Braço",
-  "w": 1440,
-  "h": 1440,
-  "src": "655220382_18096729719000641_8646682229533269134_n.jpg"
  },
  {
   "slug": "fumaca",
@@ -216,15 +117,6 @@
   "src": "655753663_18067108301658539_7610386966177654314_n.jpg"
  },
  {
-  "slug": "arame",
-  "title": "Arame farpado",
-  "cats": "ignorant",
-  "region": "Pescoço",
-  "w": 1440,
-  "h": 1800,
-  "src": "655913202_18097175311817791_4728694008049922173_n.jpg"
- },
- {
   "slug": "chaos-perna",
   "title": "Chaos",
   "cats": "freehand",
@@ -268,15 +160,6 @@
   "w": 1440,
   "h": 1713,
   "src": "659778667_18332257255216902_948518762256989428_n.jpg"
- },
- {
-  "slug": "cachorro",
-  "title": "Cachorro",
-  "cats": "ignorant",
-  "region": "Antebraço",
-  "w": 1440,
-  "h": 1800,
-  "src": "669931931_18092787194148869_540883180722511820_n.jpg"
  },
  {
   "slug": "maos",
