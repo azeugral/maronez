@@ -281,33 +281,65 @@ body.menu-open { overflow: hidden; }
 .hero__meta strong { display: block; font-family: var(--font-display); font-size: 1.6rem; color: var(--skin); line-height: 1; }
 .hero__meta span { font-size: 0.85rem; color: var(--muted); }
 
-.hero__visual { position: relative; aspect-ratio: 4 / 5; opacity: 0; animation: fade 1.2s var(--ease-out) 0.3s forwards; }
-.hero__visual .ph { position: absolute; inset: 0; }
-.hero__visual .ph img { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); animation: unveil 1.4s var(--ease-out) 0.3s both; }
-.hero__badge {
-  position: absolute; left: -8%; bottom: 8%;
-  width: clamp(120px, 18vw, 220px); aspect-ratio: 1;
-  border-radius: var(--radius-mark);
-  overflow: hidden;
-  background: var(--red);
+.hero__visual { position: relative; opacity: 0; animation: fade 1.2s var(--ease-out) 0.3s forwards; }
+
+/* Emblema: logo recortado, disco vermelho atrás e anel de texto girando */
+.hero__visual--emblem { display: grid; place-items: center; }
+.emblem {
+  --tx: 0deg; --ty: 0deg;
+  position: relative;
+  width: min(100%, 560px); aspect-ratio: 1;
   display: grid; place-items: center;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-  transform: scale(0.6);
-  animation: pop 0.9s var(--ease-out) 0.9s forwards;
+  transform: perspective(900px) rotateX(var(--ty)) rotateY(var(--tx));
+  transition: transform 0.6s var(--ease-out);
 }
-.hero__badge img { width: 100%; height: 100%; object-fit: cover; }
-.hero__badge--text { font-family: var(--font-display); color: var(--skin); font-size: 0.9rem; letter-spacing: 0.2em; text-align: center; }
+.emblem > * { grid-area: 1 / 1; }
+.emblem::before {
+  content: ""; position: absolute; inset: 4%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(204, 20, 20, 0.45), rgba(160, 0, 0, 0.12) 60%, transparent);
+  filter: blur(30px);
+  animation: glow 4.5s var(--ease-in-out) infinite alternate;
+}
+.emblem__ring {
+  width: 100%; height: 100%;
+  overflow: visible;
+  animation: spin 40s linear infinite;
+}
+.emblem__ring text {
+  font-family: var(--font-display); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase;
+  fill: var(--skin);
+}
+.emblem__disc {
+  width: 76%; aspect-ratio: 1; border-radius: 50%;
+  border: 1px dashed var(--line-strong);
+  animation: spin 60s linear infinite reverse;
+}
+.emblem__art {
+  width: 70%; aspect-ratio: 1;
+  transform: scale(0.6) rotate(-12deg); opacity: 0;
+  animation: emblem-in 1.1s var(--ease-out) 0.4s forwards;
+}
+.emblem__art img {
+  width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 0 1px var(--skin)) drop-shadow(0 30px 50px rgba(0, 0, 0, 0.6));
+  animation: float 6s var(--ease-in-out) 1.5s infinite alternate;
+}
+.hero__badge--text { font-family: var(--font-display); color: var(--skin); font-size: clamp(1.4rem, 4vw, 2.6rem); letter-spacing: 0.2em; text-align: center; }
 
 @keyframes rise { to { transform: translateY(0); } }
 @keyframes fade { to { opacity: 1; } }
 @keyframes unveil { from { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); } to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
-@keyframes pop { to { transform: scale(1); } }
+@keyframes emblem-in { to { transform: none; opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes float { to { transform: translateY(-14px); } }
+@keyframes glow { to { opacity: 0.55; transform: scale(1.06); } }
 
 @media (max-width: 900px) {
   .hero { min-height: auto; }
   .hero__grid { grid-template-columns: minmax(0, 1fr); }
-  .hero__visual { order: -1; aspect-ratio: 16 / 10; }
-  .hero__badge { left: auto; right: 4%; bottom: -14%; width: 110px; }
+  .hero__visual { order: -1; }
+  .emblem { width: min(78vw, 360px); }
   .hero__title { font-size: clamp(3rem, 15vw, 5.5rem); }
 }
 
@@ -606,6 +638,7 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
   .reveal { opacity: 1; transform: none; }
   .hero__title .line > span { transform: none; }
   .hero__copy, .hero__cta, .hero__meta, .hero__visual { opacity: 1; }
+  .emblem__art { opacity: 1; transform: none; }
   .marquee__track { animation: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
 }
