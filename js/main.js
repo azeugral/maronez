@@ -40,16 +40,33 @@
   document.querySelectorAll("img[data-logo]").forEach((img) => {
     const swap = () => {
       const fb = document.createElement("span");
-      const inBadge = img.closest(".hero__badge");
+      const inBadge = img.closest(".emblem");
       fb.className = inBadge ? "hero__badge--text" : img.className + " brand__mark--fallback";
       fb.innerHTML = inBadge ? "Seja<br>Nask" : "M";
       fb.setAttribute("aria-hidden", "true");
-      img.replaceWith(fb);
+      (inBadge ? img.closest("picture") : img).replaceWith(fb);
     };
     // O erro pode ter disparado antes do script (defer) rodar.
     if (img.complete && img.naturalWidth === 0) swap();
     else img.addEventListener("error", swap, { once: true });
   });
+
+  /* ---------- Hero: emblema inclina seguindo o ponteiro ---------- */
+  const tilt = document.querySelector("[data-tilt]");
+  if (tilt && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    const hero = tilt.closest(".hero");
+    hero.addEventListener("pointermove", (e) => {
+      const r = tilt.getBoundingClientRect();
+      const x = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+      const y = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+      tilt.style.setProperty("--tx", (x * 18).toFixed(2) + "deg");
+      tilt.style.setProperty("--ty", (-y * 18).toFixed(2) + "deg");
+    });
+    hero.addEventListener("pointerleave", () => {
+      tilt.style.setProperty("--tx", "0deg");
+      tilt.style.setProperty("--ty", "0deg");
+    });
+  }
 
   /* ---------- Nav: página atual ---------- */
   const here = location.pathname.split("/").pop() || "index.html";
