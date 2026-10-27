@@ -69,7 +69,7 @@
   }
 
   /* ---------- Nav: página atual ---------- */
-  const here = location.pathname.split("/").pop() || "index.html";
+  const here = location.pathname.split("/").pop() || "/";
   document.querySelectorAll(".nav__link, .menu__link").forEach((a) => {
     const target = a.getAttribute("href").split("/").pop();
     if (target === here) a.setAttribute("aria-current", "page");
@@ -153,7 +153,7 @@
         style.previousElementSibling.hidden = style.hidden = !w.dataset.style;
         region.textContent = w.dataset.region || "";
         state.textContent = w.dataset.state || "";
-        quote.href = `orcamento.html?ref=${encodeURIComponent(w.dataset.title || "")}`;
+        quote.href = `/orcamento?ref=${encodeURIComponent(w.dataset.title || "")}`;
         lb.showModal();
       });
     });
