@@ -199,6 +199,7 @@ p + p { margin-top: 1em; }
 
 @media (max-width: 900px) {
   .nav__list, .nav .btn { display: none; }
+  .brand__mark { display: none; }
   .nav-toggle {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
@@ -339,7 +340,10 @@ body.menu-open { overflow: hidden; }
   .hero { min-height: auto; }
   .hero__grid { grid-template-columns: minmax(0, 1fr); }
   .hero__visual { order: -1; }
-  .emblem { width: min(78vw, 360px); }
+  /* Altura explícita: no Safari do iPhone o aspect-ratio dentro do grid zerava a altura e o emblema sumia */
+  .emblem { width: min(78vw, 360px); height: min(78vw, 360px); aspect-ratio: auto; }
+  .emblem__disc { height: 76%; aspect-ratio: auto; }
+  .emblem__art { height: 70%; aspect-ratio: auto; }
   .hero__title { font-size: clamp(3rem, 15vw, 5.5rem); }
 }
 
