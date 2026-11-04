@@ -1,4 +1,18 @@
 {
+ "rosto-tribal": {
+  "title": "Rosto",
+  "alt": "Tribal freehand em preto e vermelho no rosto, da têmpora à bochecha",
+  "region": "Rosto",
+  "w": 1240,
+  "h": 1653
+ },
+ "cabeca-pescoco": {
+  "title": "Cabeça e pescoço",
+  "alt": "Freehand preto da lateral da cabeça ao pescoço, contornando a orelha",
+  "region": "Cabeça e pescoço",
+  "w": 1240,
+  "h": 1653
+ },
  "braco-fechado": {
   "title": "Braço fechado",
   "alt": "Braço inteiro fechado em freehand preto com chamas vermelhas",
