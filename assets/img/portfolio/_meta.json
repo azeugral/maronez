@@ -1,5 +1,14 @@
 [
  {
+  "slug": "skate-perna",
+  "title": "Skate",
+  "cats": "ignorant",
+  "region": "Perna",
+  "w": 640,
+  "h": 800,
+  "src": "print do celular"
+ },
+ {
   "slug": "cabeca-pescoco",
   "title": "Cabeça e pescoço",
   "cats": "freehand",

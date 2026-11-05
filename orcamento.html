@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261104b">
+  <link rel="stylesheet" href="css/style.css?v=20261105">
 </head>
 <body>
 
@@ -75,20 +75,19 @@
         <form class="form reveal" id="form-orcamento" novalidate>
           <div class="field">
             <label for="nome">Teu nome</label>
-            <input id="nome" name="nome" type="text" autocomplete="given-name" required placeholder="Como ele te chama">
+            <input id="nome" name="nome" type="text" autocomplete="given-name" required>
             <span class="field__err">Falta o nome.</span>
           </div>
 
           <div class="field">
             <label for="ideia">A ideia</label>
-            <textarea id="ideia" name="ideia" required placeholder="Ex.: fechar o antebraço em freehand, algo que siga o músculo, sem figura"></textarea>
-            <small>Vibe, sensação, o que tu curte e o que não curte. Referência de outros artistas ajuda, mas não vai ser copiada.</small>
+            <textarea id="ideia" name="ideia" required></textarea>
             <span class="field__err">Conta um pouco da ideia.</span>
           </div>
 
           <div class="field">
             <label for="regiao">Região do corpo</label>
-            <input id="regiao" name="regiao" type="text" required placeholder="Ex.: antebraço direito, do cotovelo ao punho">
+            <input id="regiao" name="regiao" type="text" required>
             <span class="field__err">Onde vai a peça?</span>
           </div>
 
@@ -112,7 +111,7 @@
 
           <div class="field">
             <label for="ref">Referência do portfólio</label>
-            <input id="ref" name="ref" type="text" placeholder="Opcional. Preenche sozinho se tu vier do portfólio">
+            <input id="ref" name="ref" type="text">
           </div>
 
           <div class="field">
@@ -132,14 +131,12 @@
                 </button>
               </div>
             </div>
-            <small>Opcional. Foto da região, tattoo antiga pra cobrir ou uma referência de vibe. O WhatsApp não aceita imagem por link, então ela vai copiada: é só colar ou anexar na conversa que abrir.</small>
           </div>
 
           <div class="form__foot">
             <button class="btn btn--wide" type="submit">Mandar no WhatsApp
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
             </button>
-            <span class="small muted">Abre o WhatsApp com a mensagem montada. Tu ainda pode editar antes de enviar.</span>
           </div>
           <p class="small accent" data-hint hidden></p>
         </form>
@@ -203,6 +200,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261104b" defer></script>
+  <script src="js/main.js?v=20261105" defer></script>
 </body>
 </html>
