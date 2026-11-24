@@ -1,7 +1,7 @@
 /* Disponíveis: filtros e zoom com anterior/próximo; "Pedir esse desenho" leva o desenho escolhido pro orçamento.
    (O provador 3D saiu do site por enquanto: volta quando a prova no corpo estiver 100%.) */
 (() => {
-  const ORC = "https://orcamento.maronez.com.br/";
+  const ORC = "/orcamento";
 
   /* ---------- filtros ---------- */
   const itens = [...document.querySelectorAll(".disp")];
@@ -23,7 +23,7 @@
   function abre(b) {
     atual = botoes.indexOf(b);
     img.src = b.dataset.full; img.alt = b.querySelector("img").alt;
-    zPedir.href = `${ORC}?desenho=${encodeURIComponent(`${b.dataset.nome} (disponível Nº ${b.dataset.n})`)}`;
+    zPedir.href = `${ORC}?disponivel=${encodeURIComponent(`Nº ${b.dataset.n} · ${b.dataset.nome}`)}`;
     if (!z.open) z.showModal();
   }
   const passa = (k) => { const v = visiveis(), i = v.indexOf(botoes[atual]); if (v.length) abre(v[(i + k + v.length) % v.length]); };

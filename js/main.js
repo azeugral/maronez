@@ -351,10 +351,16 @@
       ["dragleave", "drop"].forEach((ev) => zone.addEventListener(ev, (e) => { e.preventDefault(); up.classList.remove("is-drag"); }));
       zone.addEventListener("drop", (e) => setFile(e.dataTransfer.files[0]));
     }
-    const ref = new URLSearchParams(location.search).get("ref");
+    const qs = new URLSearchParams(location.search), ref = qs.get("ref"), disp = qs.get("disponivel");
     if (ref) {
       const refField = form.querySelector("#ref");
       if (refField) refField.value = `Referência do portfólio: ${ref}`;
+    }
+    // veio de "Pedir esse desenho" nos disponíveis: o desenho já entra no pedido
+    if (disp) {
+      const refField = form.querySelector("#ref"), ideia = form.querySelector("#ideia");
+      if (refField) refField.value = `Disponível ${disp}`;
+      if (ideia && !ideia.value) ideia.value = `Quero o disponível ${disp}.`;
     }
     form.addEventListener("submit", (e) => {
       e.preventDefault();
