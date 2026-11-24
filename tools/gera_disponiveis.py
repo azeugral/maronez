@@ -16,9 +16,9 @@ topo = (topo.replace("<title>Portfólio | Maronez</title>", "<title>Disponíveis
         .replace('content="Peças freehand feitas direto na pele."', 'content="Desenhos prontos pra tatuar."')
         .replace('content="https://maronez.com.br/portfolio"', 'content="https://maronez.com.br/disponiveis"')
         .replace('<link rel="stylesheet" href="css/style.css?v=20261105b">',
-                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124h">'))
+                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124i">'))
 rodape = rodape.replace('<script src="js/main.js?v=20261124h" defer></script>',
-                        '<script src="js/main.js?v=20261124h" defer></script>\n  <script src="js/disponiveis.js?v=20261124h" defer></script>')
+                        '<script src="js/main.js?v=20261124h" defer></script>\n  <script src="js/disponiveis.js?v=20261124i" defer></script>')
 
 seta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 cont = {k: sum(p["cat"] == k for p in L) for k in CAT}
@@ -55,7 +55,7 @@ main = f'''<main id="conteudo">
       <div class="wrap cta-band__in">
         <h2 class="display display--l">Gostou de algum?</h2>
         <div class="cta-band__actions">
-          <a class="btn btn--wide" href="/orcamento">Pedir orçamento
+          <a class="btn btn--wide" href="https://wa.me/555191248594" data-wa="Fala Maronez! Vi os teus disponíveis e quero fazer um.">Pedir pelo WhatsApp
             {seta}
           </a>
         </div>
@@ -68,7 +68,7 @@ main = f'''<main id="conteudo">
       <div class="disp-zoom__papel"><img src="" alt=""></div>
       <div class="disp-zoom__info">
         <div class="disp-zoom__acoes">
-          <a class="btn" href="/orcamento" data-z-pedir>Pedir esse desenho {seta}</a>
+          <a class="btn" href="https://wa.me/555191248594" target="_blank" rel="noopener" data-z-pedir>Pedir esse desenho {seta}</a>
           <div class="disp-zoom__nav">
             <button type="button" data-z-ant aria-label="Desenho anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
             <button type="button" data-z-prox aria-label="Próximo desenho">{seta}</button>

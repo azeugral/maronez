@@ -1,7 +1,19 @@
-/* Disponíveis: filtros e zoom com anterior/próximo; "Pedir esse desenho" leva o desenho escolhido pro orçamento.
+/* Disponíveis: filtros e zoom com anterior/próximo; "Pedir esse desenho" abre o WhatsApp do Maronez com o desenho na mensagem.
    (O provador 3D saiu do site por enquanto: volta quando a prova no corpo estiver 100%.) */
 (() => {
-  const ORC = "/orcamento";
+  const SITE = "https://maronez.com.br/";
+  // mensagem pronta: número, nome e link da imagem (ele vê qual é sem procurar)
+  const wa = (b) => {
+    const cfg = window.MARONEZ || {}, num = cfg.whatsappNumber || "555191248594";
+    const msg = [
+      "Fala Maronez! Curti um dos teus disponíveis:",
+      `Nº ${b.dataset.n} · ${b.dataset.nome}`,
+      SITE + b.dataset.full,
+      "",
+      "Quero saber valor e data pra fazer.",
+    ].join("\n");
+    return `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+  };
 
   /* ---------- filtros ---------- */
   const itens = [...document.querySelectorAll(".disp")];
@@ -23,7 +35,7 @@
   function abre(b) {
     atual = botoes.indexOf(b);
     img.src = b.dataset.full; img.alt = b.querySelector("img").alt;
-    zPedir.href = `${ORC}?disponivel=${encodeURIComponent(`Nº ${b.dataset.n} · ${b.dataset.nome}`)}`;
+    zPedir.href = wa(b);
     if (!z.open) z.showModal();
   }
   const passa = (k) => { const v = visiveis(), i = v.indexOf(botoes[atual]); if (v.length) abre(v[(i + k + v.length) % v.length]); };
