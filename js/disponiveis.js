@@ -68,5 +68,6 @@
   z.querySelector(".disp-zoom__fechar").addEventListener("click", () => z.close());
   z.addEventListener("click", (e) => { if (e.target === z) z.close(); });
   z.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft") passa(-1); if (e.key === "ArrowRight") passa(1); });
-  zProvar.addEventListener("click", (e) => { e.preventDefault(); const id = botoes[atual].dataset.id; z.close(); prova(id); });
+  // fechar o zoom devolve o foco ao cartão (e a página rola até ele): o provador só vem depois
+  zProvar.addEventListener("click", (e) => { e.preventDefault(); const id = botoes[atual].dataset.id; z.close(); requestAnimationFrame(() => setTimeout(() => prova(id), 30)); });
 })();
