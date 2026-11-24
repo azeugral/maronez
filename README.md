@@ -45,3 +45,10 @@ vazios o site segue funcionando: abre a conversa e copia a foto para colar no ch
 
 Buscar `CONFIRMAR` nos arquivos: fonte StreetTech, número do WhatsApp (`js/main.js`), fotos,
 links e preços da loja, endereço e horário, agenda de guest spots, sinal, domínio.
+
+## Disponíveis (/disponiveis)
+- Folhas originais em `assets/brand/disponiveis-originais/` (fora do git). Fluxo:
+  1. `python tools/disponiveis_cortes.py <pasta-originais> <pasta>/recortes` separa cada arte (caixas na lista P).
+  2. `python tools/disponiveis_limpa.py <pasta>/recortes <pasta>/final` faz o acabamento: cores separadas, borda alisada (supersample 2x), sem pontinhos.
+  3. Exportar os WebP de `assets/img/disponiveis/` e rodar `python tools/gera_disponiveis.py` (monta o HTML).
+- Provador 3D: LRGZ Manequim (`clientes/maronez.json`, bloco `provador`); os tribais dos mockups têm `trava` (local fixo no corpo).
