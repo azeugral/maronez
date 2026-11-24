@@ -107,7 +107,30 @@ hub_main = (main
     .replace('<a class="btn" href="https://wa.me/555191248594" target="_blank" rel="noopener" data-z-pedir>Pedir esse desenho',
              f'<a class="btn" href="#provador" data-z-provar>Provar no corpo {seta}</a>\n          <a class="btn btn--ghost" href="https://wa.me/555191248594" target="_blank" rel="noopener" data-z-pedir>Pedir no WhatsApp'))
 hub_js = open("tools/disponiveis_hub.js", encoding="utf8").read()
-hub_topo = (topo
+# topo próprio do orcamento: Instagram | logo no meio | site (sem menu, sem orçamento)
+ig_svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>'
+site_svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>'
+topo_hub = f"""  <header class="header topo3">
+    <div class="wrap topo3__in">
+      <a class="btn btn--ghost topo3__btn" href="https://www.instagram.com/maronezzzz/" target="_blank" rel="noopener" aria-label="Instagram do Maronez">{ig_svg}<span>Instagram</span></a>
+      <a class="topo3__logo" href="https://maronez.com.br/" aria-label="Maronez, site principal"><img src="assets/img/logo-maronez.png" alt="" width="48" height="48"></a>
+      <a class="btn btn--ghost topo3__btn" href="https://maronez.com.br/" aria-label="Site do Maronez"><span>Site</span>{site_svg}</a>
+    </div>
+  </header>
+
+"""
+estilo_hub = """  <style>
+    .topo3__in { height: 100%; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+    .topo3__btn { width: min(100%, 176px); min-height: 44px; padding: 0 16px; gap: 10px; font-size: .78rem; justify-content: center; }
+    .topo3__btn:first-child { justify-self: start; }
+    .topo3__btn:last-child { justify-self: end; }
+    .topo3__logo { display: block; }
+    .topo3__logo img { display: block; width: 48px; height: 48px; border-radius: var(--radius-mark); object-fit: cover; }
+    @media (max-width: 520px) { .topo3__in { gap: 14px; } .topo3__btn { padding: 0 8px; font-size: .64rem; letter-spacing: .04em; gap: 7px; } .topo3__btn svg { width: 16px; height: 16px; } .topo3__logo img { width: 42px; height: 42px; } }
+  </style>
+"""
+hub_topo = (topo[: topo.index('  <header class="header">')] + topo_hub + topo[topo.index('  <main id="conteudo">') if '  <main id="conteudo">' in topo else len(topo):]).replace('</head>', estilo_hub + '</head>', 1)
+hub_topo = (hub_topo
     .replace("<head>", '<head>\n  <base href="https://maronez.com.br/">', 1)
     .replace('<link rel="canonical" href="https://maronez.com.br/disponiveis">', '<link rel="canonical" href="https://orcamento.maronez.com.br/">')
     .replace('content="https://maronez.com.br/disponiveis"', 'content="https://orcamento.maronez.com.br/"')
