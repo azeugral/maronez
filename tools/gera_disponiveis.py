@@ -16,9 +16,9 @@ topo = (topo.replace("<title>Portfólio | Maronez</title>", "<title>Disponíveis
         .replace('content="Peças freehand feitas direto na pele."', 'content="Desenhos prontos pra tatuar. Prove no corpo 3D."')
         .replace('content="https://maronez.com.br/portfolio"', 'content="https://maronez.com.br/disponiveis"')
         .replace('<link rel="stylesheet" href="css/style.css?v=20261105b">',
-                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124b">'))
+                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124c">'))
 rodape = rodape.replace('<script src="js/main.js?v=20261105b" defer></script>',
-                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124b" defer></script>')
+                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124c" defer></script>')
 
 seta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 cont = {k: sum(p["cat"] == k for p in L) for k in CAT}
@@ -32,7 +32,6 @@ for p in L:
     cards.append(f'''          <li class="disp" data-cat="{p["cat"]}">
             <button type="button" class="disp__btn" data-id="{p["id"]}" data-n="{n}" data-nome="{nome}" data-cat="{CAT[p["cat"]]}" data-full="assets/img/disponiveis/{p["id"]}.webp">
               <span class="disp__papel"><img src="assets/img/disponiveis/{p["id"]}-p.webp" alt="{nome}, desenho disponível ({CAT[p["cat"]].lower()})" width="{p["w"]}" height="{p["h"]}" decoding="async"></span>
-              <span class="disp__faixa"><span class="disp__n">Nº {n}</span><span class="disp__nome">{nome}</span></span>
             </button>
           </li>''')
 
@@ -46,9 +45,6 @@ main = f'''<main id="conteudo">
 
     <section class="section" style="padding-top:0">
       <div class="wrap">
-        <div class="filters disp-filtros" role="group" aria-label="Filtrar disponíveis">
-          {filtros}
-        </div>
         <ul class="disp-grade" id="grade">
 {chr(10).join(cards)}
         </ul>
@@ -102,11 +98,6 @@ main = f'''<main id="conteudo">
     <div class="disp-zoom__in">
       <div class="disp-zoom__papel"><img src="" alt=""></div>
       <div class="disp-zoom__info">
-        <div>
-          <p class="label" data-z-n></p>
-          <h2 class="display display--m" data-z-nome></h2>
-          <p class="disp-zoom__cat" data-z-cat></p>
-        </div>
         <div class="disp-zoom__acoes">
           <a class="btn" href="#provador" data-z-provar>Provar no corpo {seta}</a>
           <a class="btn btn--ghost" href="https://orcamento.maronez.com.br/" data-z-pedir>Pedir esse desenho</a>

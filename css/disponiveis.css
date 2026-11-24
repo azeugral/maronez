@@ -60,7 +60,7 @@
 .disp-zoom__in { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); background: var(--ink-2); max-height: 92vh; }
 .disp-zoom__papel { display: grid; place-items: center; aspect-ratio: 1; max-height: 92vh; padding: 8%; background: var(--papel); }
 .disp-zoom__papel img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
-.disp-zoom__info { display: grid; align-content: space-between; gap: 28px; padding: clamp(24px, 3vw, 40px); padding-top: clamp(56px, 6vw, 72px); }
+.disp-zoom__info { display: grid; align-content: end; gap: 28px; padding: clamp(24px, 3vw, 40px); padding-top: clamp(56px, 6vw, 72px); }
 .disp-zoom__info .display--m { margin-top: 10px; }
 .disp-zoom__cat { margin-top: 12px; font-family: var(--font-mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .disp-zoom__acoes { display: grid; gap: 10px; }

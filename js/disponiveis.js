@@ -45,7 +45,6 @@
   const z = document.querySelector(".disp-zoom");
   if (!z) return;
   const img = z.querySelector(".disp-zoom__papel img");
-  const zN = z.querySelector("[data-z-n]"), zNome = z.querySelector("[data-z-nome]"), zCat = z.querySelector("[data-z-cat]");
   const zProvar = z.querySelector("[data-z-provar]"), zPedir = z.querySelector("[data-z-pedir]");
   const botoes = [...document.querySelectorAll(".disp__btn")];
   let atual = -1;
@@ -53,7 +52,6 @@
   function abre(b) {
     atual = botoes.indexOf(b);
     img.src = b.dataset.full; img.alt = b.querySelector("img").alt;
-    zN.textContent = `Nº ${b.dataset.n}`; zNome.textContent = b.dataset.nome; zCat.textContent = b.dataset.cat;
     zPedir.href = `${ORC}?desenho=${encodeURIComponent(`${b.dataset.nome} (disponível Nº ${b.dataset.n})`)}`;
     if (!z.open) z.showModal();
   }
