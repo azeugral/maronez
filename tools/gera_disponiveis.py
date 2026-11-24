@@ -16,9 +16,9 @@ topo = (topo.replace("<title>Portfólio | Maronez</title>", "<title>Disponíveis
         .replace('content="Peças freehand feitas direto na pele."', 'content="Desenhos prontos pra tatuar. Prove no corpo 3D."')
         .replace('content="https://maronez.com.br/portfolio"', 'content="https://maronez.com.br/disponiveis"')
         .replace('<link rel="stylesheet" href="css/style.css?v=20261105b">',
-                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124e">'))
+                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124f">'))
 rodape = rodape.replace('<script src="js/main.js?v=20261105b" defer></script>',
-                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124e" defer></script>')
+                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124f" defer></script>')
 
 seta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 cont = {k: sum(p["cat"] == k for p in L) for k in CAT}
@@ -29,7 +29,7 @@ cards = []
 for p in L:
     n = f'{p["n"]:02d}'
     nome = html.escape(p["nome"])
-    cards.append(f'''          <li class="disp" data-cat="{p["cat"]}">
+    cards.append(f'''          <li class="disp{' disp--mock' if p.get('mockup') else ''}" data-cat="{p["cat"]}">
             <button type="button" class="disp__btn" data-id="{p["id"]}" data-n="{n}" data-nome="{nome}" data-cat="{CAT[p["cat"]]}" data-full="assets/img/disponiveis/{p["id"]}.webp">
               <span class="disp__papel"><img src="assets/img/disponiveis/{p["id"]}-p.webp" alt="{nome}, desenho disponível ({CAT[p["cat"]].lower()})" width="{p["w"]}" height="{p["h"]}" decoding="async"></span>
             </button>

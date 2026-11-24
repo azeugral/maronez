@@ -46,7 +46,7 @@ P=[ # folha, id, nome, caixa, colorido
  (9,'tribal-coxa','Tribal da coxa',(95,495,310,935),0,'mock'),
  (9,'tribal-canela','Tribal da canela',(120,945,345,1528),0,'mock'),
  (9,'tribal-perna-longa','Tribal perna longa',(330,495,545,1518),0,'mock'),
- (9,'tribal-costela','Tribal da costela',(690,535,1170,1500),0,'mock'),
+ (9,'tribal-costela','Tribal da costela',(690,535,1170,1760),0,'mock'),   # vai até o meio da coxa
  (11,'peitoral-tribal','Peitoral tribal (par)',(55,195,425,445),0,'mock'),
 ]
 def folha(n):
@@ -55,7 +55,9 @@ def folha(n):
 cache={}
 lista=[]
 claim={}
+SO=set(sys.argv[3].split(',')) if len(sys.argv)>3 else None   # refaz só esses ids
 for item in P:
+    if SO and item[1] not in SO: continue
     n,i,nome,b,col=item[:5]; modo=item[5] if len(item)>5 else ''
     if modo.startswith('mock'):
         a=folha(n); nat=n in (9,10,11)
@@ -125,5 +127,5 @@ for item in P:
     c=np.pad(c,((pad,pad),(pad,pad),(0,0)),constant_values=255)
     Image.fromarray(c).save(f'{OUT}/{i}.png')
     lista.append(dict(id=i,nome=nome,folha=n,colorido=bool(col)))
-json.dump(lista,open(OUT+'/_lista.json','w',encoding='utf8'),ensure_ascii=False,indent=1)
+json.dump(lista,open(OUT+('/_lista_so.json' if SO else '/_lista.json'),'w',encoding='utf8'),ensure_ascii=False,indent=1)
 print(len(lista))

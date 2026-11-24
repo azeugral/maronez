@@ -16,9 +16,11 @@
   clip-path: polygon(0 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% 100%, 0 100%);
   transition: box-shadow .3s;
 }
-.disp__papel { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 5; padding: 12%; background: var(--papel); overflow: hidden; }
+.disp__papel { position: relative; display: block; aspect-ratio: 4 / 5; background: var(--papel); overflow: hidden; }
 .disp__papel::after { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(11, 10, 10, .06), inset 0 -40px 60px -50px rgba(11, 10, 10, .18); }
-.disp__papel img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform .7s var(--ease-out); }
+/* a arte fica sempre inteira e no centro do papel, qualquer que seja a proporção */
+.disp__papel img { position: absolute; inset: 11%; width: 78%; height: 78%; object-fit: contain; object-position: center; mix-blend-mode: multiply; transition: transform .7s var(--ease-out); }
+.disp--mock .disp__papel img { inset: 5%; width: 90%; height: 90%; }
 .disp__faixa { display: grid; align-content: center; gap: 5px; min-width: 0; min-height: 4.6rem; padding: 12px 14px 13px; border-top: 1px solid var(--line); transition: background .3s; }
 .disp__n { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .14em; color: var(--red-hot); transition: color .3s; }
 .disp__nome { min-width: 0; font-family: var(--font-display); font-weight: 700; font-size: .82rem; line-height: 1.2; letter-spacing: .02em; text-transform: uppercase; color: var(--skin); overflow-wrap: anywhere; }
@@ -59,8 +61,8 @@
 .disp-zoom { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1100px); width: 100%; color: var(--text); }
 .disp-zoom::backdrop { background: rgba(6, 5, 5, .92); backdrop-filter: blur(6px); }
 .disp-zoom__in { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); background: var(--ink-2); max-height: 92vh; }
-.disp-zoom__papel { display: grid; place-items: center; aspect-ratio: 1; max-height: 92vh; padding: 8%; background: var(--papel); }
-.disp-zoom__papel img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.disp-zoom__papel { position: relative; aspect-ratio: 1; max-height: 92vh; background: var(--papel); }
+.disp-zoom__papel img { position: absolute; inset: 6%; width: 88%; height: 88%; object-fit: contain; mix-blend-mode: multiply; }
 .disp-zoom__info { display: grid; align-content: end; gap: 28px; padding: clamp(24px, 3vw, 40px); padding-top: clamp(56px, 6vw, 72px); }
 .disp-zoom__info .display--m { margin-top: 10px; }
 .disp-zoom__cat { margin-top: 12px; font-family: var(--font-mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
@@ -75,6 +77,6 @@
 @media (max-width: 720px) {
   .disp-zoom { max-width: 100vw; max-height: 100dvh; margin: auto 0 0; }
   .disp-zoom__in { grid-template-columns: minmax(0, 1fr); max-height: 100dvh; overflow: auto; }
-  .disp-zoom__papel { aspect-ratio: 1; padding: 10%; }
+  .disp-zoom__papel { aspect-ratio: 1; }
   .disp-zoom__info { padding: 20px var(--gutter) 24px; gap: 20px; }
 }
