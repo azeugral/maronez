@@ -6,7 +6,8 @@ from PIL import Image
 from scipy import ndimage as nd
 SRC,OUT=sys.argv[1],sys.argv[2]; os.makedirs(OUT,exist_ok=True)
 LADO=2400
-L=json.load(open(SRC+'/_lista.json',encoding='utf8'))
+LISTA=sys.argv[3] if len(sys.argv)>3 else SRC+'/_lista.json'   # lista parcial: só refaz essas
+L=json.load(open(LISTA,encoding='utf8'))
 def area_min(m,a):
     lab,n=nd.label(m); 
     if n==0: return m
@@ -71,4 +72,4 @@ for p in L:
     branco=rgb*al[...,None]+255*(1-al[...,None])
     Image.fromarray(branco.clip(0,255).astype(np.uint8)).save(f"{OUT}/{p['id']}-branco.png",optimize=True)
     print(p['id'],al.shape,list(fim))
-json.dump(L,open(OUT+'/_lista.json','w',encoding='utf8'),ensure_ascii=False,indent=1)
+if len(sys.argv)<=3: json.dump(L,open(OUT+'/_lista.json','w',encoding='utf8'),ensure_ascii=False,indent=1)

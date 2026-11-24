@@ -16,9 +16,9 @@ topo = (topo.replace("<title>Portfólio | Maronez</title>", "<title>Disponíveis
         .replace('content="Peças freehand feitas direto na pele."', 'content="Desenhos prontos pra tatuar. Prove no corpo 3D."')
         .replace('content="https://maronez.com.br/portfolio"', 'content="https://maronez.com.br/disponiveis"')
         .replace('<link rel="stylesheet" href="css/style.css?v=20261105b">',
-                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124d">'))
+                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124e">'))
 rodape = rodape.replace('<script src="js/main.js?v=20261105b" defer></script>',
-                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124d" defer></script>')
+                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124e" defer></script>')
 
 seta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 cont = {k: sum(p["cat"] == k for p in L) for k in CAT}
@@ -51,20 +51,6 @@ main = f'''<main id="conteudo">
       </div>
     </section>
 
-    <section class="section disp-corpo" aria-labelledby="t-corpo">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="label">No corpo</p>
-          <h2 class="display display--l" id="t-corpo">Como fica na pele</h2>
-        </div>
-        <div class="disp-mock">
-          <figure><img src="assets/img/disponiveis/mockup-2.webp" alt="Tribais nas pernas e na lateral do tronco" width="1022" height="1400" loading="lazy"></figure>
-          <figure><img src="assets/img/disponiveis/mockup-4.webp" alt="Tribais no corpo inteiro de um manequim" width="1022" height="1400" loading="lazy"></figure>
-          <figure><img src="assets/img/disponiveis/mockup-3.webp" alt="Tribal em preto e vermelho no quadril e tribal na perna" width="1120" height="1400" loading="lazy"></figure>
-        </div>
-      </div>
-    </section>
-
     <section class="section disp-prov" id="provador" aria-labelledby="t-prov">
       <div class="wrap">
         <div class="section-head">
@@ -73,10 +59,6 @@ main = f'''<main id="conteudo">
           <p class="lead">Põe um disponível na pele, ajusta tamanho e giro e vê de todos os lados. Depois é só mandar a montagem pro orçamento.</p>
         </div>
         <div class="pv-janela">
-          <div class="pv-janela__barra">
-            <span translate="no">Provador 3D · Maronez</span>
-            <a href="https://orcamento.maronez.com.br/provador" target="_blank" rel="noopener">Abrir em tela cheia ↗</a>
-          </div>
           <iframe id="pv-janela" src="https://orcamento.maronez.com.br/provador/?vitrine=1" title="Provador 3D dos disponíveis" loading="lazy" allow="clipboard-write; web-share"></iframe>
         </div>
       </div>
