@@ -101,12 +101,10 @@ prov = '''    <section class="section disp-prov" id="provador" aria-labelledby="
     </section>
 
 '''
-hub_main = (main
-    .replace("Escolhe um e pede pelo WhatsApp.", "Escolhe um, prova no corpo 3D e pede pelo WhatsApp.")
-    .replace('    <section class="section" style="padding-top:0">', prov + '    <section class="section disp-todos" aria-label="Todos os disponíveis">', 1)
-    .replace('<a class="btn" href="https://wa.me/555191248594" target="_blank" rel="noopener" data-z-pedir>Pedir esse desenho',
-             f'<a class="btn" href="#provador" data-z-provar>Provar no corpo {seta}</a>\n          <a class="btn btn--ghost" href="https://wa.me/555191248594" target="_blank" rel="noopener" data-z-pedir>Pedir no WhatsApp'))
-hub_js = open("tools/disponiveis_hub.js", encoding="utf8").read()
+# 24/11: o provador 3D saiu (tribais com falhas): o orçamento mostra os disponíveis como o site, pedido direto no WhatsApp.
+# Para voltar com ele: inserir `prov` antes da grade e o botão data-z-provar no zoom, e usar tools/disponiveis_hub.js.
+hub_main = main
+hub_js = open("js/disponiveis.js", encoding="utf8").read()
 # topo próprio do orcamento: Instagram | logo no meio | site (sem menu, sem orçamento)
 ig_svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>'
 site_svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>'
@@ -138,6 +136,6 @@ hub_topo = (hub_topo
     .replace('class="nav__link" href="/disponiveis"', 'class="nav__link" href="/disponiveis" aria-current="page"')
     .replace('class="menu__link" href="/disponiveis"', 'class="menu__link" href="/disponiveis" aria-current="page"'))
 hub_rod = rodape.replace('  <script src="js/disponiveis.js?v=20261124i" defer></script>', f'  <script>\n{hub_js}\n  </script>')
-assert hub_rod != rodape and '<base href' in hub_topo and 'data-z-provar' in hub_main and 'id="provador"' in hub_main
+assert hub_rod != rodape and '<base href' in hub_topo and 'data-z-provar' not in hub_main and 'id="provador"' not in hub_main
 open(HUB, "w", encoding="utf8", newline="\n").write(hub_topo + hub_main + hub_rod)
 print("hub:", HUB)
