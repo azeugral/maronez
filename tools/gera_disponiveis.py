@@ -39,7 +39,7 @@ main = f'''<main id="conteudo">
     <section class="page-head">
       <div class="wrap">
         <h1 class="display display--xl">Disponíveis</h1>
-        <p class="lead">Desenhos prontos pra tatuar. Escolhe um e manda direto pro orçamento.</p>
+        <p class="lead">Desenhos prontos pra tatuar. Escolhe um e pede pelo WhatsApp.</p>
       </div>
     </section>
 
@@ -82,3 +82,39 @@ main = f'''<main id="conteudo">
   '''
 open("disponiveis.html", "w", encoding="utf8", newline="\n").write(topo + main + rodape)
 print(len(L), "desenhos")
+
+# ---------- orcamento.maronez.com.br: a mesma página + o provador 3D ----------
+# Fica no repo do LRGZ Manequim (clientes/maronez/raiz.html → maronez/index.html). <base> aponta pro site:
+# CSS, imagens, fontes e menu vêm de maronez.com.br; o provador é do próprio subdomínio (mesma origem).
+HUB = r"C:/Users/dslru/Documents/L R G Z/Sistemas/lrgz-manequim/clientes/maronez/raiz.html"
+prov = '''    <section class="section disp-prov" id="provador" aria-labelledby="t-prov">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label">Provador 3D</p>
+          <h2 class="display display--l" id="t-prov">Prova no corpo</h2>
+          <p class="lead">Põe um disponível na pele, gira o corpo e vê de todos os lados. Gostou? Pede pelo WhatsApp.</p>
+        </div>
+        <div class="pv-janela">
+          <iframe id="pv-janela" title="Provador 3D dos disponíveis" allow="clipboard-write; web-share"></iframe>
+        </div>
+      </div>
+    </section>
+
+'''
+hub_main = (main
+    .replace("Escolhe um e pede pelo WhatsApp.", "Escolhe um, prova no corpo 3D e pede pelo WhatsApp.")
+    .replace('    <section class="section" style="padding-top:0">', prov + '    <section class="section disp-todos" aria-label="Todos os disponíveis">', 1)
+    .replace('<a class="btn" href="https://wa.me/555191248594" target="_blank" rel="noopener" data-z-pedir>Pedir esse desenho',
+             f'<a class="btn" href="#provador" data-z-provar>Provar no corpo {seta}</a>\n          <a class="btn btn--ghost" href="https://wa.me/555191248594" target="_blank" rel="noopener" data-z-pedir>Pedir no WhatsApp'))
+hub_js = open("tools/disponiveis_hub.js", encoding="utf8").read()
+hub_topo = (topo
+    .replace("<head>", '<head>\n  <base href="https://maronez.com.br/">', 1)
+    .replace('<link rel="canonical" href="https://maronez.com.br/disponiveis">', '<link rel="canonical" href="https://orcamento.maronez.com.br/">')
+    .replace('content="https://maronez.com.br/disponiveis"', 'content="https://orcamento.maronez.com.br/"')
+    .replace('<link rel="manifest" href="manifest.webmanifest">\n', '')
+    .replace('class="nav__link" href="/disponiveis"', 'class="nav__link" href="/disponiveis" aria-current="page"')
+    .replace('class="menu__link" href="/disponiveis"', 'class="menu__link" href="/disponiveis" aria-current="page"'))
+hub_rod = rodape.replace('  <script src="js/disponiveis.js?v=20261124i" defer></script>', f'  <script>\n{hub_js}\n  </script>')
+assert hub_rod != rodape and '<base href' in hub_topo and 'data-z-provar' in hub_main and 'id="provador"' in hub_main
+open(HUB, "w", encoding="utf8", newline="\n").write(hub_topo + hub_main + hub_rod)
+print("hub:", HUB)
