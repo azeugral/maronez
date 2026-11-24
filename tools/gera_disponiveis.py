@@ -10,15 +10,15 @@ rodape = base[base.index("<footer"):]
 
 topo = (topo.replace("<title>Portfólio | Maronez</title>", "<title>Disponíveis | Maronez</title>")
         .replace('content="Peças freehand e ignorant feitas por Maronez em Porto Alegre e guest spots."',
-                 'content="Desenhos prontos do Maronez: tribal, personagens, lettering e colagem. Prove no corpo 3D e peça o orçamento."')
+                 'content="Desenhos prontos do Maronez: tribal, personagens, lettering e colagem. Escolhe um e pede o orçamento."')
         .replace('href="https://maronez.com.br/portfolio"', 'href="https://maronez.com.br/disponiveis"')
         .replace('content="Portfólio | Maronez"', 'content="Disponíveis | Maronez"')
-        .replace('content="Peças freehand feitas direto na pele."', 'content="Desenhos prontos pra tatuar. Prove no corpo 3D."')
+        .replace('content="Peças freehand feitas direto na pele."', 'content="Desenhos prontos pra tatuar."')
         .replace('content="https://maronez.com.br/portfolio"', 'content="https://maronez.com.br/disponiveis"')
         .replace('<link rel="stylesheet" href="css/style.css?v=20261105b">',
-                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124f">'))
+                 '<link rel="stylesheet" href="css/style.css?v=20261124">\n  <link rel="stylesheet" href="css/disponiveis.css?v=20261124g">'))
 rodape = rodape.replace('<script src="js/main.js?v=20261105b" defer></script>',
-                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124f" defer></script>')
+                        '<script src="js/main.js?v=20261124" defer></script>\n  <script src="js/disponiveis.js?v=20261124g" defer></script>')
 
 seta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 cont = {k: sum(p["cat"] == k for p in L) for k in CAT}
@@ -39,7 +39,7 @@ main = f'''<main id="conteudo">
     <section class="page-head">
       <div class="wrap">
         <h1 class="display display--xl">Disponíveis</h1>
-        <p class="lead">Desenhos prontos pra tatuar. Escolhe um, prova no corpo 3D e manda pro orçamento.</p>
+        <p class="lead">Desenhos prontos pra tatuar. Escolhe um e manda direto pro orçamento.</p>
       </div>
     </section>
 
@@ -48,19 +48,6 @@ main = f'''<main id="conteudo">
         <ul class="disp-grade" id="grade">
 {chr(10).join(cards)}
         </ul>
-      </div>
-    </section>
-
-    <section class="section disp-prov" id="provador" aria-labelledby="t-prov">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="label">Provador 3D</p>
-          <h2 class="display display--l" id="t-prov">Prova no corpo</h2>
-          <p class="lead">Põe um disponível na pele, ajusta tamanho e giro e vê de todos os lados. Depois é só mandar a montagem pro orçamento.</p>
-        </div>
-        <div class="pv-janela">
-          <iframe id="pv-janela" src="https://orcamento.maronez.com.br/provador/?vitrine=1" title="Provador 3D dos disponíveis" loading="lazy" allow="clipboard-write; web-share"></iframe>
-        </div>
       </div>
     </section>
 
@@ -81,8 +68,7 @@ main = f'''<main id="conteudo">
       <div class="disp-zoom__papel"><img src="" alt=""></div>
       <div class="disp-zoom__info">
         <div class="disp-zoom__acoes">
-          <a class="btn" href="#provador" data-z-provar>Provar no corpo {seta}</a>
-          <a class="btn btn--ghost" href="https://orcamento.maronez.com.br/" data-z-pedir>Pedir esse desenho</a>
+          <a class="btn" href="https://orcamento.maronez.com.br/" data-z-pedir>Pedir esse desenho {seta}</a>
           <div class="disp-zoom__nav">
             <button type="button" data-z-ant aria-label="Desenho anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
             <button type="button" data-z-prox aria-label="Próximo desenho">{seta}</button>
