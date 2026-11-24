@@ -34,9 +34,10 @@
       }
     });
   }
-  function prova(id) {
+  function prova(id, direto) {
     if (!f) return;
-    document.getElementById("provador").scrollIntoView({ behavior: suave() });
+    const alvo = document.getElementById("provador").getBoundingClientRect().top + scrollY - (direto ? 0 : 0);
+    scrollTo({ top: Math.max(0, alvo), behavior: direto ? "instant" : suave() });
     if (pronto) f.contentWindow.postMessage({ manequim: 1, provar: id }, "*");
     else { f.loading = "eager"; f.src = `${PROV}&d=${encodeURIComponent(id)}`; }
   }
@@ -67,5 +68,10 @@
   z.addEventListener("click", (e) => { if (e.target === z) z.close(); });
   z.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft") passa(-1); if (e.key === "ArrowRight") passa(1); });
   // fechar o zoom devolve o foco ao cartão (e a página rola até ele): o provador só vem depois
-  zProvar.addEventListener("click", (e) => { e.preventDefault(); const id = botoes[atual].dataset.id; z.close(); requestAnimationFrame(() => setTimeout(() => prova(id), 30)); });
+  zProvar.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = botoes[atual].dataset.id;
+    z.addEventListener("close", () => setTimeout(() => prova(id, true), 0), { once: true });
+    z.close();
+  });
 })();
